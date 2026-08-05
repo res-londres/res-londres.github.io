@@ -1,0 +1,57 @@
+* {
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin: 0;
+    padding: 0;
+}
+a {
+    color: #00b4d8ff;
+    text-decoration: none;
+}
+a:hover {
+    color: #caf0f8ff;
+}
+body {
+    background: #caf0f8ff;
+}
+header {
+    align-items: center;
+    background: repeating-linear-gradient(1deg, #03045e, #0077b6ff);
+    color: #00b4d8ff;
+    display: flex;
+    gap: 25px;
+    padding: 20px;
+}
+header h1 {
+    font-size: 2.5rem;
+}
+main {
+    margin: 32px;
+}
+nav {
+    display: flex;
+    gap: 20px;
+}
+section {
+    background:#03045eff;
+    border-radius: 10px;
+    color: #00b4d8ff;
+    margin-top: 25px;
+    padding: 20px;
+}
+section p {
+    color: #caf0f8ff;
+    margin-top: 10px;
+}
+
+/*
+color-palette
+--deep-twilight: #03045eff
+--french-blue: #023e8aff
+--bright-teal-blue: #0077b6ff
+--blue-green: #0096c7ff
+--turquoise-surf: #00b4d8ff
+--sky-aqua: #48cae4ff
+--frosted-blue: #90e0efff
+--frosted-blue-2: #ade8f4ff
+--light-cyan: #caf0f8ff
+*/
