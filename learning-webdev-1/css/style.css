@@ -24,12 +24,13 @@ header {
 header h1 {
     font-size: 2.5rem;
 }
-main {
-    margin: 32px;
-}
-nav {
+header nav {
     display: flex;
     gap: 20px;
+
+}
+main {
+    margin: 32px;
 }
 section {
     background:#03045eff;
@@ -38,9 +39,15 @@ section {
     margin-top: 25px;
     padding: 20px;
 }
+section h1 {
+    margin-bottom: 20px;
+}
+section nav {
+    padding: 0 20px;
+}
 section p {
     color: #caf0f8ff;
-    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 /*
