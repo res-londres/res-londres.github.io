@@ -25,6 +25,12 @@ footer a {
 footer a:hover {
     color:hsl(212, 45%, 89%);
 }
+main {
+    align-items: center;
+    background: hsl(212, 45%, 89%);
+    display: flex;
+    justify-content: center;
+}
 .card {
     background: white;
     border-radius: 25px;
@@ -45,13 +51,4 @@ footer a:hover {
 .card p {
     color: hsl(216, 15%, 48%);
     margin: 20px;
-}
-.container {
-    align-items: center;
-    background: hsl(212, 45%, 89%);
-    box-shadow: 0 20px 20px hsl(211, 25%, 83%);
-    display: flex;
-    justify-content: center;
-    margin: 100px;
-    padding: 135px;
 }
