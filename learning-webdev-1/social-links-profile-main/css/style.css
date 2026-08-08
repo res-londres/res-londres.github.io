@@ -1,0 +1,94 @@
+@font-face {
+    font-family: "Inter";
+    src: url("./assets/fonts/Inter-VariableFont_sint.wght.ttf") format("truetype");
+    font-style: normal;
+    font-weight: 100 900;
+}
+* {
+    font-size: 14px;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: hsl(0, 0%, 8%);
+    display: grid;
+    flex-direction: row;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+footer {
+    background: hsl(218, 44%, 22%);
+    color: hsl(212, 45%, 89%);
+    display: flex;
+    gap: 5px;
+    justify-content: center;
+    padding: 25px;
+}
+footer a {
+    color: hsl(288, 100%, 50%);
+    text-decoration: none;
+}
+footer a:hover {
+    color:hsl(212, 45%, 89%);
+}
+main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.button {
+    background: hsl(0, 0%, 20%);
+    border: none;
+    border-radius: 10px;
+    color: hsl(0, 0%, 100%);
+    font-weight: 600;
+    padding: 15px;
+    text-align: center;
+    text-decoration: none;
+}
+.button:active {
+    background: hsl(75, 94%, 57%);
+    color: hsl(0, 0%, 8%);
+}
+.buttons-container {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+.card {
+    background: hsl(0, 0%, 12%);
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    font-family: "Inter", sans-serif;
+    min-width: 250px;
+    padding: 40px;
+}
+.card h2 {
+    color: hsl(0, 0%, 100%);
+    font-size: revert;
+    margin-bottom: 10px;
+    text-align: center;
+}
+.card img {
+    border-radius: 180px;
+    max-width: 88px;
+    width: 100%;
+    height: auto;
+    margin-bottom: 25px;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.card p {
+    text-align: center;
+}
+.description {
+    color: hsl(0, 0%, 100%);
+    margin-bottom: 20px;
+}
+.location {
+    color: hsl(75, 94%, 57%);
+    font-weight: 600;
+    margin-bottom: 20px;
+}
