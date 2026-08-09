@@ -1,0 +1,87 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: hsl(275, 100%, 97%);
+    background-image: url("../assets/images/background-pattern-desktop.svg");
+    background-position: top center;
+    background-repeat: no-repeat;
+    color: hsl(292, 42%, 14%);
+    display: grid;
+    flex-direction: row;
+    font-family: "Work Sans";
+    font-size: 16px;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+footer {
+    background: hsl(218, 44%, 22%);
+    color: hsl(212, 45%, 89%);
+    display: flex;
+    font-family: sans-serif;
+    gap: 5px;
+    justify-content: center;
+    padding: 25px;
+}
+footer a {
+    color: hsl(288, 100%, 50%);
+    text-decoration: none;
+}
+footer a:hover {
+    color:hsl(212, 45%, 89%);
+}
+main {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+.accordion-content {
+    color: hsl(292, 16%, 49%);
+    cursor: pointer;
+    max-height: 0;
+    overflow: hidden;
+    padding-bottom: 0;
+    transition: max-height 0.3s ease, padding-bottom 0.3s ease;
+    line-height: 1.6;
+}
+
+.accordion-content.open {
+    max-height: none; 
+    padding-bottom: 15px;
+}
+.accordion-header {
+    align-items: center;
+    background: transparent;
+    border: none;
+    color: hsl(292, 42%, 14%);
+    cursor: pointer;
+    display: flex;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: space-between;
+    padding: 15px 0;
+    text-align: left;
+    width: 100%;
+}
+.accordion-item {
+    padding: 10px 0;
+}
+.accordion-item:last-child {
+    padding-bottom: 0;
+}
+.card {
+    background: hsl(0, 100%, 100%);
+    border-radius: 15px;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    max-width: 600px;
+    padding: 30px 40px;
+    width: 100%;
+}
+.card-header {
+    align-items: center;
+    display: flex;
+    font-size: 1.5rem;
+    gap: 15px;
+}
