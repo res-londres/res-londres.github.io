@@ -1,11 +1,4 @@
-@font-face {
-    font-family: "Inter";
-    src: url("./assets/fonts/Inter-VariableFont_sint.wght.ttf") format("truetype");
-    font-style: normal;
-    font-weight: 100 900;
-}
 * {
-    font-size: 14px;
     margin: 0;
     padding: 0;
 }
@@ -13,6 +6,7 @@ body {
     background: hsl(0, 0%, 8%);
     display: grid;
     flex-direction: row;
+    font-family: "Inter", sans-serif;
     grid-template-rows: 1fr auto;
     min-height: 100vh;
 }
@@ -61,7 +55,6 @@ main {
     border-radius: 15px;
     display: flex;
     flex-direction: column;
-    font-family: "Inter", sans-serif;
     max-width: 300px;
     padding: 40px;
     width: 100%;
