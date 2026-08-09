@@ -20,6 +20,7 @@ footer {
     background: hsl(218, 44%, 22%);
     color: hsl(212, 45%, 89%);
     display: flex;
+    font-family: sans-serif;
     gap: 5px;
     justify-content: center;
     padding: 25px;
