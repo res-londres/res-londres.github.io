@@ -1,0 +1,27 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: grid;
+    flex-direction: row;
+    grid-template-rows: 1fr auto;
+    min-height: 100vh;
+}
+footer {
+    background: hsl(218, 44%, 22%);
+    color: hsl(212, 45%, 89%);
+    display: flex;
+    font-family: sans-serif;
+    gap: 5px;
+    justify-content: center;
+    padding: 25px;
+}
+footer a {
+    color: hsl(288, 100%, 50%);
+    text-decoration: none;
+}
+footer a:hover {
+    color:hsl(212, 45%, 89%);
+}
