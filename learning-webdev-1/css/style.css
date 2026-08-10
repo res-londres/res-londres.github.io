@@ -16,6 +16,9 @@ body {
 details {
     margin: 20px auto;
 }
+details li {
+    padding: 5px;
+}
 details nav {
     padding: 0 20px;
 }
@@ -70,6 +73,7 @@ summary {
 }
 summary:hover {
     color: #caf0f8ff;
+    cursor: pointer;
 }
 /*
 color-palette
