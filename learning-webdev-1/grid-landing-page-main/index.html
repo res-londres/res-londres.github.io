@@ -1,60 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
-
-  <link rel="icon" type="image/png" sizes="32x32" href="./assets/images/favicon-32x32.png">
-
-  <title>Frontend Mentor | Grid landing page</title>
-
-  <!-- Feel free to remove these styles or customise in your own stylesheet 👍 -->
-  <style>
-    .attribution { font-size: 11px; text-align: center; }
-    .attribution a { color: hsl(228, 45%, 44%); }
-  </style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, intial-scale=1">
+    <link rel="icon" href="./assets/images/favicon-32x32.png" sizes="32x32" type="image/png">
+    <link rel="stylesheet" href="./css/style.css" type="text/css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap">
+    <title>Grid Landing Page</title>  
 </head>
 <body>
-
-  <!-- Nav -->
-  Bridge Collective
-
-  <!-- Hero -->
-  A classroom for every child.
-
-  We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.
-
-  <!-- Stats -->
-  2.4M
-  Students reached
-  Across 31 countries since 2011.
-
-  1,284
-  Schools partnered
-  In 14 countries, from Kenya to Guatemala.
-
-  38K
-  Teachers trained
-  Equipped with modern tools and methodology.
-
-  3.1×
-  Graduation lift
-  Partner schools outperform national averages 3x.
-
-  <!-- Footer -->
-  © 2026 Bridge Collective
-  Registered charity 12345678
-
-  <!-- Menu panel — hidden until the hamburger is activated -->
-  About
-  Our Work
-  Partners
-  Annual Report
-  Donate
-
-  <div class="attribution">
-    Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a>.
-    Coded by <a href="#">Your Name Here</a>.
-  </div>
+    <main>
+        <div class="item">
+            <p>● Bridge Collective</p>
+            <button class="hamburger" type="button">
+                <img class="hamburger-icon" src="./assets/images/icon-menu.svg" alt="hamburger">
+            </button>
+        </div>
+        <div class="item">
+            <div class="hero">
+                <p class="hero-header">A classroom for every child.</p>
+                <p class="hero-paragraph">We fund the schools, train the teachers, and measure what works — so every child we reach today becomes a graduate tomorrow.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <img class="stats-icon" src="./assets/images/icon-sparkle.svg" alt="sparkle-icon">
+                <p class="stats-header">2.4M</p>
+            </div>
+            <div class="item-text">
+                <p class="stats-subheader">Students reached</p>
+                <p class="stats-paragraph">Across 31 countries since 2011.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <img class="stats-icon" src="./assets/images/icon-plus.svg" alt="plus-icon">
+                <p class="stats-header">1,284</p>
+            </div>
+            <div class="item-text">
+                <p class="stats-subheader">Schools partnered</p>
+                <p class="stats-paragraph">In 14 countries, from Kenya to Guatemala.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <img class="stats-icon" src="./assets/images/icon-arrow-right.svg" alt="arrow-right-icon">
+                <p class="stats-header">38K</p>
+            </div>
+            <div class="item-text">
+                <p class="stats-subheader">Teachers trained</p>
+                <p class="stats-paragraph">Equipped with modern tools and methodology.</p>
+            </div>
+        </div>
+        <div class="item">
+            <div class="item-header">
+                <img class="stats-icon" src="./assets/images/icon-trending-up.svg" alt="trending-up-icon">
+                <p class="stats-header">3.1x</p>
+            </div>
+            <div class="item-text">
+                <p class="stats-subheader">Graduation lift</p>
+                <p class="stats-paragraph">Partner schools outperform national averages 3x.</p>
+            </div>
+        </div>
+        <div class="item">
+            <p>Challenge by <a href="https://www.frontendmentor.io?ref=challenge">Frontend Mentor</a></p>
+            <p>Coded by <a href="https://github.com/res-londres">res-londres</a></p>
+        </div>
+    </main>
 </body>
 </html>

@@ -1,0 +1,106 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: hsl(220, 100%, 64%);
+    color:hsl(0, 0%, 100%);
+    font-family: "Inter", sans-serif;
+    font-size: 1rem;
+}
+button {
+    background: transparent;
+    border: none;
+}
+main {
+    display: grid;
+    gap: 2px;
+    min-height: 100vh;
+}
+.hero-header {
+    font-size: 2.75rem;
+    line-height: 1;
+    padding-bottom: 2rem;
+}
+.hero-paragraph {
+    color: hsl(224, 100%, 95%);
+    line-height: 2;
+}
+.item {
+    background:hsl(228, 99%, 58%);
+}
+.item:first-child,
+.item:nth-child(7) {
+    align-items: center;
+    display: flex;
+    grid-column: 1 / -1;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.item:nth-child(2) {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 4rem 2rem;
+}
+.item:nth-child(3),
+.item:nth-child(4),
+.item:nth-child(5),
+.item:nth-child(6) {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 2rem;
+}
+.item:nth-child(3):hover,
+.item:nth-child(4):hover,
+.item:nth-child(5):hover,
+.item:nth-child(6):hover {
+    background: hsl(228, 100%, 60%);
+    cursor: pointer;
+}
+.item:last-child a {
+    color:hsl(0, 0%, 100%);
+    text-decoration: none;
+}
+.item:last-child a:hover {
+    text-decoration: underline;   
+}
+.item-header {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+}
+.item-text {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.stats-header {
+    font-size: 2rem;
+}
+.stats-subheader {
+    font-size: 1.2rem;
+}
+.stats-paragraph {
+    color: hsl(224, 100%, 95%);
+}
+@media(min-width: 767px) {
+    main {
+        grid-template-columns: 40% 1fr 1fr;
+        grid-template-rows: 75px 1fr 1fr 75px;
+    }
+    .item:nth-child(2) {
+        grid-row: span 2;
+    }
+    .item:nth-child(5) {
+        grid-column: 2;
+    }
+}
+@media(max-width: 767px) {
+    main {
+        grid-template-rows: 75px repeat(5, 1fr) 75px;
+    }
+}
