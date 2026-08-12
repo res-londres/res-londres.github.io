@@ -31,7 +31,7 @@ main {
     background:hsl(228, 99%, 58%);
 }
 .item:first-child,
-.item:nth-child(7) {
+.item:last-child {
     align-items: center;
     display: flex;
     grid-column: 1 / -1;
@@ -102,5 +102,11 @@ main {
 @media(max-width: 767px) {
     main {
         grid-template-rows: 75px repeat(5, 1fr) 75px;
+    }
+    .item:last-child {
+        align-items: unset;
+        flex-direction: column;
+        gap: 5px;
+        justify-content: center;
     }
 }
