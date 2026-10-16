@@ -1,17 +1,39 @@
+:root {
+    --white: #f8f8ff;
+    --gray: #595959;
+    --black: #333333;
+
+    --surface: var(--white);
+    --divider: var(--gray);
+    --text: var(--black);
+}
+
 * {
+    box-sizing: border-box;
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
 }
 
-.temp-card {
+body {
+    background: var(--white);
+    color: var(--black);
+}
+
+a {
+    text-decoration: none;
+    color: inherit;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    height: 3rem;
+    border-bottom: 1px solid var(--divider);
+    padding: 0 5rem;
+    align-content: center;
+}
+
+nav {
     display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 2rem;
-    min-height: 100dvh;
-}
-
-p {
-    font-size: 1.5rem;
+    gap: 1rem;
 }
