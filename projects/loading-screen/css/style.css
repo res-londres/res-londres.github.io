@@ -1,0 +1,45 @@
+:root {
+    --loading-spinner: var(--green);
+    --loading-indicator: var(--gray-light);
+}
+
+main {
+    display: flex;
+}
+
+/* --------------------------- LOADING STYLES --------------------------- */
+.loading {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.loading__anim {
+    display: inline-block;
+    width: 75px;
+    height: 75px;
+    border: 7px solid var(--loading-indicator);
+    border-radius: 50%;
+    border-top-color: var(--loading-spinner);
+    border-left-color: var(--loading-spinner);
+    animation: rotate 1000ms infinite linear;
+}
+
+@keyframes rotate {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+.loading__text {
+    width: 5rem;
+    margin-left: 1rem;
+}
+
+
+
+.loading__text--hidden {
+    color: var(--text-white);
+}

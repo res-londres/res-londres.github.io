@@ -1,13 +1,17 @@
 :root {
     --white: #f8f8ff;
     --gray: #595959;
+    --gray-light: #d8d7d8;
     --black: #333333;
     --green: #228B22;
 
     --surface: var(--white);
     --border: var(--gray);
     --text: var(--black);
+    --text-white: var(--white);
     --hyperlink: var(--green);
+
+    --header-height: 3rem;
 }
 
 * {
@@ -27,15 +31,18 @@ body {
 
 main {
     flex: 1;
+    margin-top: var(--header-height);
 }
 
 header {
-    position: sticky;
+    position: fixed;
     top: 0;
     align-content: center;
-    height: 3rem;
+    width: 100dvw;
+    height: var(--header-height);
     padding: 0 2rem;
     border-bottom: 1px solid var(--border);
+    background: var(--surface);
 }
 
 footer {
