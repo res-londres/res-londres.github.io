@@ -38,7 +38,21 @@ main {
     margin-left: 1rem;
 }
 
+.loading__text::after {
+    content: "...";
+    animation: dots 1.5s steps(4, end) infinite;
+    display: inline-block;
+    overflow: hidden;
+    vertical-align: bottom;
+}
 
+@keyframes dots {
+    0%   { width: 0; }
+    25%  { width: 0.4em; }
+    50%  { width: 0.8em; }
+    75%  { width: 1.2em; }
+    100% { width: 0; }
+}
 
 .loading__text--hidden {
     color: var(--text-white);
