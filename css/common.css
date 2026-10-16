@@ -2,6 +2,7 @@
     --white: #f8f8ff;
     --gray: #595959;
     --gray-light: #d8d7d8;
+    --slate: #64748B;
     --black: #333333;
     --green: #228B22;
 
@@ -9,6 +10,7 @@
     --border: var(--gray);
     --text: var(--black);
     --text-white: var(--white);
+    --text-muted: var(--slate);
     --hyperlink: var(--green);
 
     --header-height: 3rem;
@@ -50,7 +52,6 @@ footer {
     align-content: center;
     padding: 1rem 2rem;
     border-top: 1px solid var(--border);
-    font-size: 0.9rem;
 }
 
 nav {
@@ -66,4 +67,11 @@ a {
 .social-links {
     margin-bottom: 0.75rem;
     color: var(--hyperlink);
+}
+
+.path {
+    color: var(--gray);
+    padding: 0.5rem 2rem;
+    display: flex;
+    gap: 0.75rem;
 }
