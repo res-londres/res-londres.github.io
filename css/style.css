@@ -61,6 +61,7 @@
     border: 1px solid var(--border);
     border-radius: 0.5rem;
     padding: 1rem;
+    padding-bottom: 0.5rem;
     min-height: 250px;
     max-height: 250px;
     overflow: hidden;
@@ -77,20 +78,22 @@
     font-weight: bold;
 }
 
-.project__link {
-    color: var(--accent);
-    border-top: 1px solid var(--border);
-    padding-top: 0.5rem;
-    display: block;
+.project__card__footer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
 }
 
 .project__tags {
-    margin-bottom: 0.75rem;
+    display: flex;
+    gap: 0.5rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid var(--border); 
 }
 
-.tag {
-    border: 1px solid var(--border);
-    border-radius: 0.25rem;
-    font-size: 0.85rem;
-    padding: 0.25rem;
+.project__link {
+    color: var(--accent);
+    display: block;
+    text-align: right;
+    width: 100%;
 }
