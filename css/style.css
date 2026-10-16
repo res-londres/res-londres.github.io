@@ -57,7 +57,7 @@
     gap: 1.5rem;
 }
 
-.projects__card {
+.project {
     border: 1px solid var(--border);
     border-radius: 0.5rem;
     padding: 1rem;
@@ -70,7 +70,7 @@
     justify-content: space-between;
 }
 
-.projects__card__header {
+.project__header {
     padding-bottom: 0.25rem;
     margin-bottom: 0.75rem;
     border-bottom: 1px solid var(--border);
@@ -89,7 +89,7 @@
     color: var(--text-muted);
 }
 
-.projects__card__footer {
+.project__footer {
     display: flex;
     flex-direction: column;
     gap: 0.2rem;
