@@ -46,3 +46,51 @@
     padding: 0 max(5rem, 5dvw);
     text-align: justify;
 }
+
+/* --------------------------- PROJECT PAGE STYLES --------------------------- */
+.projects {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    width: 100dvw;
+    margin: 1rem 0;
+    padding: 0 3rem;
+    gap: 1.5rem;
+}
+
+.projects__card {
+    border: 1px solid var(--border);
+    border-radius: 0.5rem;
+    padding: 1rem;
+    min-height: 250px;
+    max-height: 250px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.project__title {
+    font-size: 1.25rem;
+    padding-bottom: 0.25rem;
+    margin-bottom: 0.75rem;
+    border-bottom: 1px solid var(--border);
+    font-weight: bold;
+}
+
+.project__link {
+    color: var(--accent);
+    border-top: 1px solid var(--border);
+    padding-top: 0.5rem;
+    display: block;
+}
+
+.project__tags {
+    margin-bottom: 0.75rem;
+}
+
+.tag {
+    border: 1px solid var(--border);
+    border-radius: 0.25rem;
+    font-size: 0.85rem;
+    padding: 0.25rem;
+}

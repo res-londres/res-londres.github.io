@@ -4,7 +4,7 @@
     --gray-light: #d8d7d8;
     --slate: #64748B;
     --black: #333333;
-    --green: #228B22;
+    --green: #0e8d64;
 
     --surface: var(--white);
     --border: var(--gray);
@@ -12,6 +12,7 @@
     --text-white: var(--white);
     --text-muted: var(--slate);
     --hyperlink: var(--green);
+    --accent: var(--green);
 
     --header-height: 3rem;
 }
@@ -74,4 +75,14 @@ a {
     padding: 0.5rem 2rem;
     display: flex;
     gap: 0.75rem;
+}
+
+.title {
+    display: block;
+    font-size: 2.5rem;
+    letter-spacing: var(--spacing);
+    text-transform: uppercase;
+    width: 100dvw;
+    text-align: center;
+    padding: 1rem;
 }
