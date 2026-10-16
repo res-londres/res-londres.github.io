@@ -17,7 +17,7 @@ main {
     flex-direction: column;
 }
 
-.loading__anim {
+.loading__spinner {
     display: inline-block;
     width: 75px;
     height: 75px;
@@ -34,12 +34,12 @@ main {
     }
 }
 
-.loading__text {
+.loading__text--dots {
     width: 5rem;
     margin-left: 1rem;
 }
 
-.loading__text::after {
+.loading__text--dots::after {
     content: "...";
     animation: dots 1.5s steps(4, end) infinite;
     display: inline-block;
