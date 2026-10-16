@@ -2,10 +2,12 @@
     --white: #f8f8ff;
     --gray: #595959;
     --black: #333333;
+    --green: #228B22;
 
     --surface: var(--white);
     --border: var(--gray);
     --text: var(--black);
+    --hyperlink: var(--green);
 }
 
 * {
@@ -18,6 +20,13 @@ body {
     background: var(--white);
     color: var(--black);
     letter-spacing: 0.05rem;
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
 }
 
 a {
@@ -59,21 +68,43 @@ nav {
     border-radius: 2rem;
 }
 
-.profile-name {
-    padding: 1rem;
-    padding-left: calc(1rem + 1rem);
+.profile-fname {
+    --spacing: 1rem;
+    padding-top: 1rem;
+    padding-left: var(--spacing);
     font-size: 2.5rem;
-    letter-spacing: 1rem;
+    letter-spacing: var(--spacing);
     text-transform: uppercase;
 }
 
+.profile-lname {
+    --spacing: 0.3rem;
+    text-transform: uppercase;
+    letter-spacing: var(--spacing);
+    padding-left: var(--spacing);
+}
+
 .profile-note {
-    margin-bottom: 1rem;
+    margin-top: 1rem;
     padding: 0 5rem;
     text-align: justify;
 }
 
 .profile-bio {
+    margin-top: 1rem;
     padding: 0 max(5rem, 5dvw);
     text-align: justify;
+}
+
+.social-links {
+    color: var(--hyperlink);
+    margin-bottom: 0.75rem;
+}
+
+footer {
+    position: sticky;
+    align-content: center;
+    padding: 1rem 2rem;
+    border-top: 1px solid var(--border);
+    font-size: 0.9rem;
 }
