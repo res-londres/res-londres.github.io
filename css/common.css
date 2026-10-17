@@ -40,7 +40,6 @@ header {
     grid-row: 1;
     top: 0;
     align-content: center;
-    width: 100dvw;
     height: var(--header-height);
     padding: 0 2rem;
     border-bottom: 1px solid var(--border);
@@ -49,7 +48,6 @@ header {
 
 footer {
     grid-row: 3;
-    position: sticky;
     align-content: center;
     padding: 1rem 2rem;
     border-top: 1px solid var(--border);
