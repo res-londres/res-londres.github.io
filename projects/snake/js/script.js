@@ -2,7 +2,7 @@ const SNAKE_COLOR = "#3b719f";
 const CANVAS_COLOR = "#fed33c";
 const FOOD_COLOR = "#c7372f"
 const BORDER_COLOR = "#595959";
-const GAME_SPEED = 100;
+const SNAKE_SPEED = 100;
 
 const canvas = document.getElementById('snake-canvas');
 const ctx = canvas.getContext('2d');
@@ -29,9 +29,11 @@ document.addEventListener('keydown', changeDirection);
 function main(currentTime) {
     requestAnimationFrame(main);
 
+    if (didGameEnd()) return;
+
     const deltaTime = currentTime - lastTime;
 
-    if (deltaTime >= GAME_SPEED) {
+    if (deltaTime >= SNAKE_SPEED) {
         lastTime = currentTime;
         changingDirection = false;
         clearCanvas();
@@ -133,4 +135,17 @@ function createFood() {
 function drawFood() {
     ctx.fillStyle = FOOD_COLOR;
     ctx.fillRect(foodX, foodY, 10, 10);
+}
+
+function didGameEnd() {
+    for (let i = 1; i < snake.length; i++) {
+    if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true
+    }
+
+    const hitLeftWall = snake[0].x < 0;
+    const hitRightWall = snake[0].x > canvas.width - 10;
+    const hitToptWall = snake[0].y < 0;
+    const hitBottomWall = snake[0].y > canvas.height - 10;
+
+    return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall
 }
