@@ -13,8 +13,11 @@ const ctx = canvas.getContext('2d');
 
 const snakeScore = document.getElementById('snake__score');
 const snakeHighscore = document.getElementById('snake__highscore');
+const snakeStatus = document.getElementById('snake__status');
+const snakeMessage = document.getElementById('snake__message');
 
-let changingDirection = false;
+let isChangingDirection = false;
+let isGameOver = true;
 let score = 0;
 let highscore = 0;
 let foodX;
@@ -23,23 +26,29 @@ let dx = GRID_SIZE;
 let dy = 0;
 let lastTime = 0;
 
-let snake = [
-    {x: 150, y: 150},  
-    {x: 135, y: 150},  
-    {x: 120, y: 150},  
-    {x: 105, y: 150},  
-    {x: 90, y: 150}
-];
+function getStartSnake() {
+    return [
+        {x: 150, y: 150},  
+        {x: 135, y: 150},  
+        {x: 120, y: 150},  
+        {x: 105, y: 150},  
+        {x: 90, y: 150}
+    ];
+}
+let snake = getStartSnake();
 
 requestAnimationFrame(main);
-createFood();
+drawSnake();
 document.addEventListener('keydown', changeDirection);
+document.addEventListener('keydown', restartGame);
 
 function main(currentTime) {
     requestAnimationFrame(main);
 
+    if (isGameOver) return;
+
     if (didGameEnd()) {
-        setScore();
+        gameOver();
         return;
     }
 
@@ -47,7 +56,7 @@ function main(currentTime) {
 
     if (deltaTime >= SNAKE_SPEED) {
         lastTime = currentTime;
-        changingDirection = false;
+        isChangingDirection = false;
         clearCanvas();
         drawFood();
         advanceSnake();
@@ -92,8 +101,8 @@ function changeDirection(event) {
     const UP_KEY = 38;
     const DOWN_KEY = 40;
 
-    if (changingDirection) return;
-    changingDirection = true;
+    if (isChangingDirection) return;
+    isChangingDirection = true;
 
     const keyPressed = event.keyCode;
 
@@ -186,4 +195,33 @@ function setScore() {
 function incrementScore() {
     score += SCORE_INCREMENT;
     snakeScore.textContent = score;
+}
+
+function restartGame(event) {
+    if (!isGameOver) return;
+    const keys = [37, 38, 39, 40];
+    const keyPressed = event.keyCode;
+
+    if (keys.includes(keyPressed)) {
+        snake = getStartSnake();
+        isGameOver = false;
+        lastTime = performance.now(); 
+        dx = GRID_SIZE;
+        dy = 0;
+        
+        setScore();
+        clearCanvas(); 
+        createFood();
+        drawSnake();
+        drawFood();
+
+        snakeStatus.textContent = 'GAME ON';
+        snakeMessage.textContent = 'Play well!';
+    }
+}
+
+function gameOver(event) {
+    snakeStatus.textContent = 'GAME OVER';
+    snakeMessage.textContent = 'Press any arrow key to start';
+    isGameOver = true;
 }
