@@ -8,6 +8,13 @@ main {
     flex-direction: column;
 }
 
+.project {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+
 /* --------------------------- LOADING STYLES --------------------------- */
 .loading {
     display: flex;
