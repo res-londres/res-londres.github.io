@@ -15,31 +15,31 @@
         </nav>
     </header>
     <main>
-        <div class="calculator">
+        <div class="calculator" id="calculator">
             <div class="calculator__display">
-                <p class="calculator__expression">1+1</p>
-                <p class="calculator__result">2</p>
+                <p class="calculator__expression" id="calculator__expression"></p>
+                <p class="calculator__result" id="calculator__result"></p>
             </div>
             <div class="calculator__buttons">
-                <button class="button js-button button--light button--operator" type="button" data-operation="add">+</button>
-                <button class="button js-button button--light button--operator" type="button" data-operation="subtract">−</button>
-                <button class="button js-button button--light button--operator" type="button" data-operation="multiply">×</button>
-                <button class="button js-button button--light button--operator" type="button" data-operation="division">÷</button>
+                <button class="button js-button button--light button--operator" type="button" data-role="operator" data-function="add" data-value="+">+</button>
+                <button class="button js-button button--light button--operator" type="button" data-role="operator" data-function="subtract" data-value="−">−</button>
+                <button class="button js-button button--light button--operator" type="button" data-role="operator" data-function="multiply" data-value="×">×</button>
+                <button class="button js-button button--light button--operator" type="button" data-role="operator" data-function="divide" data-value="÷">÷</button>
 
-                <button class="button js-button button--dark" type="button" data-number="7">7</button>
-                <button class="button js-button button--dark" type="button" data-number="8">8</button>
-                <button class="button js-button button--dark" type="button" data-number="9">9</button>
-                <button class="button js-button button--dark" type="button" data-number="4">4</button>
-                <button class="button js-button button--dark" type="button" data-number="5">5</button>
-                <button class="button js-button button--dark" type="button" data-number="6">6</button>
-                <button class="button js-button button--dark" type="button" data-number="1">1</button>
-                <button class="button js-button button--dark" type="button" data-number="2">2</button>
-                <button class="button js-button button--dark" type="button" data-number="3">3</button>
-                <button class="button js-button button--dark" type="button" data-number="0">0</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="7">7</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="8">8</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="9">9</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="4">4</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="5">5</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="6">6</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="1">1</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="2">2</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="3">3</button>
+                <button class="button js-button button--dark" type="button" data-role="number" data-value="0">0</button>
 
-                <button class="button js-button button--dark" type="button">.</button>
-                <button class="button js-button button--dark" type="button">C</button>
-                <button class="button js-button button--light button--equal" type="button">=</button>
+                <button class="button js-button button--dark" type="button" data-role="misc" data-function="decimal-point" data-value=".">.</button>
+                <button class="button js-button button--dark" type="button" data-role="misc" data-function="clear" data-value="">C</button>
+                <button class="button js-button button--light button--equal" type="button" data-role="misc" data-function="equal" data-value="=">=</button>
             </div>
         </div>
     </main>
@@ -52,5 +52,7 @@
         </nav>
         <span>© 2026 Res Londres</span>
     </footer>
+
+    <script src="js/script.js"></script>
 </body>
 </html>
