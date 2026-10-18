@@ -10,7 +10,7 @@ let result = '';
 let last_is_operator = false;
 
 calculator.querySelectorAll('.js-button').forEach(function(button) {
-    button.addEventListener('click', function(event) {
+    button.addEventListener('click', function() {
         const role = this.dataset.role;
         const func = this.dataset.function;
         const value = this.dataset.value;
@@ -30,6 +30,8 @@ calculator.querySelectorAll('.js-button').forEach(function(button) {
                 if (func === 'equal') {
                     calculateResult();
                     renderResult();
+                } else if (func === 'clear') {
+                    clearDisplay();
                 }
                 break;
         }
@@ -74,6 +76,13 @@ function cleanExpression() {
         cleanExpression = cleanExpression.replaceAll(key, value);
     });
     return cleanExpression;
+}
+
+function clearDisplay() {
+    expressionString = '';
+    result = '';
+    renderExpression();
+    renderResult();
 }
 
 function initOperatorConversion() {
