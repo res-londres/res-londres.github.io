@@ -1,5 +1,6 @@
 const SNAKE_COLOR = "#3b719f";
 const CANVAS_COLOR = "#fed33c";
+const FOOD_COLOR = "#c7372f"
 const BORDER_COLOR = "#595959";
 const GAME_SPEED = 100;
 
@@ -7,6 +8,8 @@ const canvas = document.getElementById('snake-canvas');
 const ctx = canvas.getContext('2d');
 
 let changingDirection = false;
+let foodX;
+let foodY;
 let dx = 0;
 let dy = -10;
 let lastTime = 0;
@@ -20,6 +23,7 @@ let snake = [
 ];
 
 requestAnimationFrame(main);
+createFood();
 document.addEventListener('keydown', changeDirection);
 
 function main(currentTime) {
@@ -31,6 +35,7 @@ function main(currentTime) {
         lastTime = currentTime;
         changingDirection = false;
         clearCanvas();
+        drawFood();
         advanceSnake();
         drawSnake();
     }
@@ -97,22 +102,30 @@ function changeDirection(event) {
     }
 }
 
-function randomTen(min, max) {
+function randomPoint(min, max) {
     return Math.round((Math.random() * (max - min) + min) / 10) * 10;
 }
 
-/**
- * Creates random set of coordinates for the snake food.
- */
 function createFood() {
-    // Generate a random number the food x-coordinate
-    foodX = randomTen(0, gameCanvas.width - 10);
-    // Generate a random number for the food y-coordinate
-    foodY = randomTen(0, gameCanvas.height - 10);
+    let foodIsOnSnake = true;
 
-    // if the new food location is where the snake currently is, generate a new food location
-    snake.forEach(function isFoodOnSnake(part) {
-    const foodIsoNsnake = part.x == foodX && part.y == foodY;
-    if (foodIsoNsnake) createFood();
-    });
+    while (foodIsOnSnake) {
+        foodX = randomPoint(0, canvas.width - 10);
+        foodY = randomPoint(0, canvas.height - 10);
+
+        foodIsOnSnake = false;
+
+        for (let i = 0; i < snake.length; i++) {
+            const snakePart = snake[i];
+            if (snakePart.x === foodX && snakePart.y === foodY) {
+                foodIsOnSnake = true; 
+                break; 
+            }
+        }
+    }
+}
+
+function drawFood() {
+    ctx.fillStyle = FOOD_COLOR;
+    ctx.fillRect(foodX, foodY, 10, 10);
 }
