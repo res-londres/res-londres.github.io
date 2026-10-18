@@ -1,11 +1,3 @@
-:root {
-    --local-yellow: #fed33c; 
-    --local-blue: #3b719f;
-
-    --surface: var(--local-yellow);
-    --snake: var(--local-blue);
-}
-
 main {
     display: flex;
     flex-direction: column;
@@ -16,9 +8,4 @@ main {
     align-items: center;
     justify-content: center;
     height: 100%;
-}
-
-canvas {
-    border: 1px solid var(--global-border);
-    background: var(--surface);
 }
