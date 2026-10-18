@@ -1,8 +1,11 @@
-const SNAKE_COLOR = "#3b719f";
-const CANVAS_COLOR = "#fed33c";
-const FOOD_COLOR = "#c7372f"
-const BORDER_COLOR = "#595959";
+const SNAKE_COLOR = "#1a2421";
+const SNAKE_BORDER_COLOR = "#cfcfc4";
+const CANVAS_COLOR = "#cfcfc4";
+const FOOD_COLOR = "#cfcfc4"
+const FOOD_BORDER_COLOR = "#1a2421";
+const BORDER_COLOR = "#1a2421";
 const SNAKE_SPEED = 100;
+const GRID_SIZE = 15;
 
 const canvas = document.getElementById('snake-canvas');
 const ctx = canvas.getContext('2d');
@@ -10,16 +13,16 @@ const ctx = canvas.getContext('2d');
 let changingDirection = false;
 let foodX;
 let foodY;
-let dx = 0;
-let dy = -10;
+let dx = GRID_SIZE;
+let dy = 0;
 let lastTime = 0;
 
 let snake = [
     {x: 150, y: 150},  
-    {x: 140, y: 150},  
-    {x: 130, y: 150},  
+    {x: 135, y: 150},  
     {x: 120, y: 150},  
-    {x: 110, y: 150}
+    {x: 105, y: 150},  
+    {x: 90, y: 150}
 ];
 
 requestAnimationFrame(main);
@@ -49,8 +52,12 @@ function drawSnake() {
 
 function drawSnakePart(snakePart) {
     ctx.fillStyle = SNAKE_COLOR;
+    ctx.strokeStyle = SNAKE_BORDER_COLOR;
 
-    ctx.fillRect(snakePart.x, snakePart.y, 10, 10);
+    ctx.lineWidth = 2; 
+
+    ctx.fillRect(snakePart.x, snakePart.y, GRID_SIZE, GRID_SIZE);
+    ctx.strokeRect(snakePart.x, snakePart.y, GRID_SIZE, GRID_SIZE);
 }
 
 function advanceSnake() {  
@@ -69,7 +76,7 @@ function advanceSnake() {
 
 function clearCanvas() {
     ctx.fillStyle = CANVAS_COLOR;
-    ctx.strokestyle = BORDER_COLOR;
+    ctx.strokeStyle = BORDER_COLOR;
 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.strokeRect(0, 0, canvas.width, canvas.height);
@@ -86,39 +93,39 @@ function changeDirection(event) {
 
     const keyPressed = event.keyCode;
 
-    const goingUp = dy === -10;
-    const goingDown = dy === 10;
-    const goingRight = dx === 10;
-    const goingLeft = dx === -10;
+    const goingUp = dy === -GRID_SIZE;
+    const goingDown = dy === GRID_SIZE;
+    const goingRight = dx === GRID_SIZE;
+    const goingLeft = dx === -GRID_SIZE;
 
     if (keyPressed === LEFT_KEY && !goingRight) {
-        dx = -10;
+        dx = -GRID_SIZE;
         dy = 0;
     }
     if (keyPressed === UP_KEY && !goingDown) {
         dx = 0;
-        dy = -10;
+        dy = -GRID_SIZE;
     }
     if (keyPressed === RIGHT_KEY && !goingLeft) {
-        dx = 10;
+        dx = GRID_SIZE;
         dy = 0;
     }
     if (keyPressed === DOWN_KEY && !goingUp) {
         dx = 0;
-        dy = 10;
+        dy = GRID_SIZE;
     }
 }
 
-function randomPoint(min, max) {
-    return Math.round((Math.random() * (max - min) + min) / 10) * 10;
+function randomPoint(max) {
+    return Math.floor(Math.random() * (max / GRID_SIZE)) * GRID_SIZE;
 }
 
 function createFood() {
     let foodIsOnSnake = true;
 
     while (foodIsOnSnake) {
-        foodX = randomPoint(0, canvas.width - 10);
-        foodY = randomPoint(0, canvas.height - 10);
+        foodX = randomPoint(canvas.width);
+        foodY = randomPoint(canvas.height);
 
         foodIsOnSnake = false;
 
@@ -134,7 +141,12 @@ function createFood() {
 
 function drawFood() {
     ctx.fillStyle = FOOD_COLOR;
-    ctx.fillRect(foodX, foodY, 10, 10);
+    ctx.strokeStyle = FOOD_BORDER_COLOR;
+
+    ctx.lineWidth = 2;
+
+    ctx.fillRect(foodX + 2, foodY + 2, 11, 11);
+    ctx.strokeRect(foodX + 2, foodY + 2, 11, 11);
 }
 
 function didGameEnd() {
@@ -143,9 +155,9 @@ function didGameEnd() {
     }
 
     const hitLeftWall = snake[0].x < 0;
-    const hitRightWall = snake[0].x > canvas.width - 10;
+    const hitRightWall = snake[0].x > canvas.width - GRID_SIZE;
     const hitToptWall = snake[0].y < 0;
-    const hitBottomWall = snake[0].y > canvas.height - 10;
+    const hitBottomWall = snake[0].y > canvas.height - GRID_SIZE;
 
     return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall
 }
