@@ -8,6 +8,7 @@ let expressionString = '';
 let result = '';
 
 let last_is_operator = false;
+let result_is_calculated = false;
 
 calculator.querySelectorAll('.js-button').forEach(function(button) {
     button.addEventListener('click', function() {
@@ -18,15 +19,18 @@ calculator.querySelectorAll('.js-button').forEach(function(button) {
         switch (role) {
             case 'operator':
                 if (blockOperator(role, func)) return;
+                moveToNextEquation(role);
                 appendToExpression(value);
                 renderExpression();
                 break;
             case 'number':
                 if (blockOperator(role, func)) return;
+                moveToNextEquation(role);
                 appendToExpression(value);
                 renderExpression();
                 break;
             case 'misc':
+                moveToNextEquation(role);
                 if (func === 'equal') {
                     calculateResult();
                     renderResult();
@@ -57,6 +61,7 @@ function calculateResult() {
     } catch {
         result = 'ERROR';
     }
+    result_is_calculated = true;
 }
 
 function renderResult() {
@@ -85,8 +90,24 @@ function cleanExpression() {
 function clearDisplay() {
     expressionString = '';
     result = '';
+    renderAll();
+}
+
+function renderAll() {
     renderExpression();
     renderResult();
+}
+
+function moveToNextEquation(role) {
+    if (!result_is_calculated) return;
+    if (role === 'operator') {
+        expressionString = result;
+        result = '';
+        renderAll();
+    } else if (role === 'number' || role == 'misc') {
+        clearDisplay();
+    }
+    result_is_calculated = false;
 }
 
 function initOperatorConversion() {
