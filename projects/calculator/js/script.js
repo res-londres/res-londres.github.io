@@ -32,6 +32,10 @@ calculator.querySelectorAll('.js-button').forEach(function(button) {
                     renderResult();
                 } else if (func === 'clear') {
                     clearDisplay();
+                } else if (func === 'decimal-point') {
+                    if (blockOperator(role, func)) return;
+                    appendToExpression(value);
+                    renderExpression();
                 }
                 break;
         }
