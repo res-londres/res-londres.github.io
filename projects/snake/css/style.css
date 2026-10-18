@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap');
+
 :root {
     --local-black: #1a2421;
     --local-gray: #cfcfc4;
@@ -40,6 +42,7 @@ canvas {
     width: clamp(450px, 50dvw, 700px);
     border-radius: 2rem;
     background: var(--surface);
+    font-family: "Pixelify Sans", sans-serif;;
 }
 
 .snake__header {
@@ -55,9 +58,9 @@ canvas {
     font-size: 1.25rem;
 }
 
-.snake__stat {
-    flex: 1; 
+.snake__stat { 
     display: flex;
+    flex: 1;
     align-items: center;
     gap: 0.5rem;
 }
