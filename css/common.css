@@ -6,13 +6,13 @@
     --black: #333333;
     --green: #0e8d64;
 
-    --surface: var(--white);
-    --border: var(--gray);
-    --text: var(--black);
-    --text-white: var(--white);
-    --text-muted: var(--slate);
-    --hyperlink: var(--green);
-    --accent: var(--green);
+    --global-surface: var(--white);
+    --global-border: var(--gray);
+    --global-text: var(--black);
+    --global-text-white: var(--white);
+    --global-text-muted: var(--slate);
+    --global-hyperlink: var(--green);
+    --global-accent: var(--green);
 
     --header-height: 3rem;
 }
@@ -27,7 +27,7 @@ body {
     display: grid;
     grid-template-rows: var(--header-height) 1fr auto;
     min-height: 100dvh;
-    background: var(--white);
+    background: var(--global-surface);
     color: var(--black);
     letter-spacing: 0.05rem;
 }
@@ -42,15 +42,15 @@ header {
     align-content: center;
     height: var(--header-height);
     padding: 0 2rem;
-    border-bottom: 1px solid var(--border);
-    background: var(--surface);
+    border-bottom: 1px solid var(--global-border);
+    background: var(--global-surface);
 }
 
 footer {
     grid-row: 3;
     align-content: center;
     padding: 1rem 2rem;
-    border-top: 1px solid var(--border);
+    border-top: 1px solid var(--global-border);
 }
 
 nav {
@@ -65,7 +65,7 @@ a {
 
 .social-links {
     margin-bottom: 0.75rem;
-    color: var(--hyperlink);
+    color: var(--global-hyperlink);
 }
 
 .path {
