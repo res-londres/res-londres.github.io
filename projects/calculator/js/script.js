@@ -1,6 +1,6 @@
 const calculator = document.getElementById('calculator');
-const displayExpression = document.getElementById('calculator__expression');
-const displayResult = document.getElementById('calculator__result');
+const expressionSpan = document.querySelector('#calculator__expression span');
+const resultSpan = document.querySelector('#calculator__result span');
 
 let expressionString = '';
 let result = '';
@@ -22,6 +22,7 @@ calculator.querySelectorAll('.js-button').forEach(function(button) {
             case 'misc':
                 break;
         }
+        console.log(expressionString);
     });
 });
 
@@ -30,5 +31,5 @@ function appendToExpression(value) {
 }
 
 function renderExpression() {
-    displayExpression.textContent = expressionString;
+    expressionSpan.textContent = expressionString; 
 }
