@@ -24,14 +24,14 @@
         <div class="project">
             <div class="snake">
                 <div class="snake__header">
-                    <div>
+                    <div class="snake__stat snake__stat--left">
                         <i class="fa-solid fa-star"></i>
-                        <span class="snake__high-score">0</span>
+                        <span class="snake__score" id="snake__score">0</span>
                     </div>
-                    <span class="snake__status">GAME ON</span>
-                    <div>
+                    <span class="snake__status" id="snake__status">GAME ON</span>
+                    <div class="snake__stat snake__stat--right">
                         <i class="fa-solid fa-trophy"></i>
-                        <span class="snake__score">0</span>
+                        <span class="snake__highscore" id="snake__highscore">0</span>
                     </div>
                 </div>
                 <canvas id="snake__canvas" width="450" height="450"></canvas>

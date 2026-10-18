@@ -14,9 +14,9 @@ main {
 }
 
 canvas {
+    display: block;
     width: 450px;
     height: 450px;
-    display: block;
     border-right: 1px solid var(--border);
     border-left: 1px solid var(--border);
 }
@@ -35,31 +35,42 @@ canvas {
 .snake {
     display: flex;
     flex-direction: column;
-    justify-content: center;
     align-items: center;
-    background: var(--surface);
-    border-radius: 2rem;
+    justify-content: center;
     width: clamp(450px, 50dvw, 700px);
+    border-radius: 2rem;
+    background: var(--surface);
 }
 
 .snake__header {
     display: flex;
     justify-content: space-between;
+    width: 100%;
     padding: 1rem 2rem 0.5rem;
     border-bottom: 1px solid var(--border);
     font-size: 1.5rem;
-    width: 100%;
 }
 
 .snake__header i {
     font-size: 1.25rem;
 }
 
+.snake__stat {
+    flex: 1; 
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.snake__stat--right {
+    justify-content: flex-end;
+}
+
 .snake__footer {
     display: flex;
     justify-content: center;
+    width: 100%;
     padding: 0.5rem 2rem 1rem;
     border-top: 1px solid var(--border);
     font-size: 1.5rem;
-    width: 100%;
 }

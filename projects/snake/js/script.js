@@ -5,12 +5,18 @@ const FOOD_COLOR = "#cfcfc4"
 const FOOD_BORDER_COLOR = "#1a2421";
 const BORDER_COLOR = "#1a2421";
 const SNAKE_SPEED = 100;
+const SCORE_INCREMENT = 10;
 const GRID_SIZE = 15;
 
 const canvas = document.getElementById('snake__canvas');
 const ctx = canvas.getContext('2d');
 
+const snakeScore = document.getElementById('snake__score');
+const snakeHighscore = document.getElementById('snake__highscore');
+
 let changingDirection = false;
+let score = 0;
+let highscore = 0;
 let foodX;
 let foodY;
 let dx = GRID_SIZE;
@@ -32,7 +38,10 @@ document.addEventListener('keydown', changeDirection);
 function main(currentTime) {
     requestAnimationFrame(main);
 
-    if (didGameEnd()) return;
+    if (didGameEnd()) {
+        setScore();
+        return;
+    }
 
     const deltaTime = currentTime - lastTime;
 
@@ -45,6 +54,8 @@ function main(currentTime) {
         drawSnake();
     }
 }
+
+/* ----------------------------- SNAKE ----------------------------- */
 
 function drawSnake() {
     snake.forEach(drawSnakePart);
@@ -68,16 +79,11 @@ function advanceSnake() {
     snake.unshift(head);
     const didEatFood = head.x === foodX && head.y === foodY;
     if (didEatFood) {
+        incrementScore();
         createFood();
     } else {
         snake.pop();
     }
-}
-
-function clearCanvas() {
-    ctx.fillStyle = CANVAS_COLOR;
-
-    ctx.fillRect(0, 0, canvas.width, canvas.height);
 }
 
 function changeDirection(event) {
@@ -114,6 +120,8 @@ function changeDirection(event) {
     }
 }
 
+/* ----------------------------- FOOD ----------------------------- */
+
 function randomPoint(max) {
     return Math.floor(Math.random() * (max / GRID_SIZE)) * GRID_SIZE;
 }
@@ -147,6 +155,14 @@ function drawFood() {
     ctx.strokeRect(foodX + 2, foodY + 2, 11, 11);
 }
 
+/* ----------------------------- MISC ----------------------------- */
+
+function clearCanvas() {
+    ctx.fillStyle = CANVAS_COLOR;
+
+    ctx.fillRect(0, 0, canvas.width, canvas.height);
+}
+
 function didGameEnd() {
     for (let i = 1; i < snake.length; i++) {
     if (snake[i].x === snake[0].x && snake[i].y === snake[0].y) return true
@@ -158,4 +174,16 @@ function didGameEnd() {
     const hitBottomWall = snake[0].y > canvas.height - GRID_SIZE;
 
     return hitLeftWall || hitRightWall || hitToptWall || hitBottomWall
+}
+
+function setScore() {
+    highscore = score > highscore ? score : highscore;
+    score = 0;
+    snakeScore.textContent = score;
+    snakeHighscore.textContent = highscore;
+}
+
+function incrementScore() {
+    score += SCORE_INCREMENT;
+    snakeScore.textContent = score;
 }
