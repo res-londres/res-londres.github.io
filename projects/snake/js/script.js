@@ -57,7 +57,12 @@ function advanceSnake() {
         y: snake[0].y + dy
     };
     snake.unshift(head);
-    snake.pop();
+    const didEatFood = head.x === foodX && head.y === foodY;
+    if (didEatFood) {
+        createFood();
+    } else {
+        snake.pop();
+    }
 }
 
 function clearCanvas() {
