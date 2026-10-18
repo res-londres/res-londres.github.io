@@ -57,6 +57,7 @@ function renderExpression() {
 function calculateResult() {
     if (expressionString === '') return;
     try {
+        // TODO: Dont use eval()
         result = eval(cleanExpression());
         result = parseFloat(Number(result).toFixed(8))
     } catch {
