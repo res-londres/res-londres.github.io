@@ -7,7 +7,7 @@ const BORDER_COLOR = "#1a2421";
 const SNAKE_SPEED = 100;
 const GRID_SIZE = 15;
 
-const canvas = document.getElementById('snake-canvas');
+const canvas = document.getElementById('snake__canvas');
 const ctx = canvas.getContext('2d');
 
 let changingDirection = false;
@@ -76,10 +76,8 @@ function advanceSnake() {
 
 function clearCanvas() {
     ctx.fillStyle = CANVAS_COLOR;
-    ctx.strokeStyle = BORDER_COLOR;
 
     ctx.fillRect(0, 0, canvas.width, canvas.height);
-    ctx.strokeRect(0, 0, canvas.width, canvas.height);
 }
 
 function changeDirection(event) {

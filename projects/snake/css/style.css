@@ -1,6 +1,28 @@
+:root {
+    --local-black: #1a2421;
+    --local-gray: #cfcfc4;
+
+    --border: var(--local-black);
+    --surface: var(--local-gray);
+    --base: var(--local-black);
+}
+
 main {
     display: flex;
     flex-direction: column;
+    background: var(--base);
+}
+
+canvas {
+    width: 450px;
+    height: 450px;
+    display: block;
+    border-right: 1px solid var(--border);
+    border-left: 1px solid var(--border);
+}
+
+.path {
+    color: var(--global-text-white);
 }
 
 .project {
@@ -8,4 +30,36 @@ main {
     align-items: center;
     justify-content: center;
     height: 100%;
+}
+
+.snake {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background: var(--surface);
+    border-radius: 2rem;
+    width: clamp(450px, 50dvw, 700px);
+}
+
+.snake__header {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem 2rem 0.5rem;
+    border-bottom: 1px solid var(--border);
+    font-size: 1.5rem;
+    width: 100%;
+}
+
+.snake__header i {
+    font-size: 1.25rem;
+}
+
+.snake__footer {
+    display: flex;
+    justify-content: center;
+    padding: 0.5rem 2rem 1rem;
+    border-top: 1px solid var(--border);
+    font-size: 1.5rem;
+    width: 100%;
 }
