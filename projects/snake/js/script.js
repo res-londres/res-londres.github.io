@@ -1,6 +1,7 @@
 const SNAKE_COLOR = "#3b719f";
 const CANVAS_COLOR = "#fed33c";
 const BORDER_COLOR = "#595959";
+const GAME_SPEED = 100;
 
 const canvas = document.getElementById('snake-canvas');
 const ctx = canvas.getContext('2d');
@@ -8,6 +9,7 @@ const ctx = canvas.getContext('2d');
 let changingDirection = false;
 let dx = 0;
 let dy = -10;
+let lastTime = 0;
 
 let snake = [
     {x: 150, y: 150},  
@@ -17,18 +19,21 @@ let snake = [
     {x: 110, y: 150}
 ];
 
-main();
+requestAnimationFrame(main);
 document.addEventListener('keydown', changeDirection);
 
-function main() {  
-    setTimeout(function onTick() {  
+function main(currentTime) {
+    requestAnimationFrame(main);
+
+    const deltaTime = currentTime - lastTime;
+
+    if (deltaTime >= GAME_SPEED) {
+        lastTime = currentTime;
         changingDirection = false;
-        clearCanvas();  
+        clearCanvas();
         advanceSnake();
         drawSnake();
-
-        main();
-    }, 100);
+    }
 }
 
 function drawSnake() {
@@ -90,4 +95,24 @@ function changeDirection(event) {
         dx = 0;
         dy = 10;
     }
+}
+
+function randomTen(min, max) {
+    return Math.round((Math.random() * (max - min) + min) / 10) * 10;
+}
+
+/**
+ * Creates random set of coordinates for the snake food.
+ */
+function createFood() {
+    // Generate a random number the food x-coordinate
+    foodX = randomTen(0, gameCanvas.width - 10);
+    // Generate a random number for the food y-coordinate
+    foodY = randomTen(0, gameCanvas.height - 10);
+
+    // if the new food location is where the snake currently is, generate a new food location
+    snake.forEach(function isFoodOnSnake(part) {
+    const foodIsoNsnake = part.x == foodX && part.y == foodY;
+    if (foodIsoNsnake) createFood();
+    });
 }
