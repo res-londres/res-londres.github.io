@@ -1,6 +1,8 @@
 const calculator = document.getElementById('calculator');
 const expressionSpan = document.querySelector('#calculator__expression span');
 const resultSpan = document.querySelector('#calculator__result span');
+const operatorConversion = {};
+initOperatorConversion();
 
 let expressionString = '';
 let result = '';
@@ -25,9 +27,12 @@ calculator.querySelectorAll('.js-button').forEach(function(button) {
                 renderExpression();
                 break;
             case 'misc':
+                if (func === 'equal') {
+                    calculateResult();
+                    renderResult();
+                }
                 break;
         }
-        console.log(expressionString);
     });
 });
 
@@ -39,6 +44,19 @@ function renderExpression() {
     expressionSpan.textContent = expressionString; 
 }
 
+function calculateResult() {
+    try {
+        result = eval(cleanExpression());
+        result = parseFloat(Number(result).toFixed(8))
+    } catch {
+        result = 'ERROR';
+    }
+}
+
+function renderResult() {
+    resultSpan.textContent = result;
+}
+
 function blockOperator(role, func) {
     if (role === 'operator') {
         if (expressionString === '' && ['multiply', 'divide'].includes(func)) return true;
@@ -48,4 +66,19 @@ function blockOperator(role, func) {
         last_is_operator = false;
         return false;
     }
+}
+
+function cleanExpression() {
+    let cleanExpression = expressionString;
+    Object.entries(operatorConversion).forEach(function([key, value]) {
+        cleanExpression = cleanExpression.replaceAll(key, value);
+    });
+    return cleanExpression;
+}
+
+function initOperatorConversion() {
+    operatorConversion[document.querySelector('.js-button[data-function="add"]').dataset.value] = '+';
+    operatorConversion[document.querySelector('.js-button[data-function="subtract"]').dataset.value] = '-';
+    operatorConversion[document.querySelector('.js-button[data-function="multiply"]').dataset.value] = '*';
+    operatorConversion[document.querySelector('.js-button[data-function="divide"]').dataset.value] = '/';
 }
