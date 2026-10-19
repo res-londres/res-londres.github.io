@@ -23,7 +23,8 @@ canvas {
     border-left: 1px solid var(--border);
 }
 
-.path {
+.path,
+.path__component {
     color: var(--global-text-white);
 }
 

@@ -15,6 +15,7 @@
     --global-accent: var(--green);
 
     --header-height: 3rem;
+    --footer-height: 5rem;
 }
 
 * {
@@ -25,11 +26,12 @@
 
 body {
     display: grid;
-    grid-template-rows: var(--header-height) 1fr auto;
+    grid-template-rows: var(--header-height) 1fr var(--footer-height);
     min-height: 100dvh;
     background: var(--global-surface);
     color: var(--black);
     letter-spacing: 0.05rem;
+    font-family: sans-serif;
 }
 
 main {
@@ -44,35 +46,44 @@ header {
     padding: 0 2rem;
     border-bottom: 1px solid var(--global-border);
     background: var(--global-surface);
+    color: var(--global-text);
 }
 
 footer {
     grid-row: 3;
     align-content: center;
-    padding: 1rem 2rem;
+    padding: 0 2rem;
+    height: var(--footer-height);
     border-top: 1px solid var(--global-border);
+    background: var(--global-surface);
+    display: flex; 
+    flex-direction: column;
+    justify-content: space-evenly;
 }
 
 nav {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
 }
 
 a {
-    color: inherit;
+    color: var(--global-hyperlink);
     text-decoration: none;
 }
 
-.social-links {
-    margin-bottom: 0.75rem;
-    color: var(--global-hyperlink);
+header nav a {
+    color: var(--global-text);
 }
 
 .path {
-    color: var(--gray);
-    padding: 0.5rem 2rem;
+    padding: 1rem 2rem;
     display: flex;
     gap: 0.75rem;
+}
+
+.path,
+.path__component {
+    color: var(--gray);
 }
 
 .title {
@@ -83,4 +94,8 @@ a {
     width: 100dvw;
     text-align: center;
     padding: 1rem;
+}
+
+.body {
+    padding: 0 clamp(50px, 25%, 75px);
 }
