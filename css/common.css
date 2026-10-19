@@ -97,5 +97,5 @@ header nav a {
 }
 
 .body {
-    padding: 0 clamp(50px, 25%, 75px);
+    padding: 0 15rem;
 }

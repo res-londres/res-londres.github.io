@@ -50,23 +50,27 @@
 /* ------------------------- HOMEPAGE RECENT STYLES ------------------------- */
 .d-recent {
     display: grid;
-    grid-template-columns: 1fr 30%;
+    grid-template-columns: 1fr auto;
 }
 
 
 .recent__header {
     display: flex; 
     justify-content: space-between;
-    padding: 0 0.5rem;
+    padding: 0 1rem;
+    align-items: end;
 }
 
 .recent__title {
     font-size: 1.25rem;
+    font-weight: bold;
 }
 
 .recent__body {
+    padding: 1rem;
+    gap: 1.5rem;
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
 }
 
 .recent__footer {
@@ -78,10 +82,14 @@
     border-left: 1px solid var(--global-border);
 }
 
+.recent__empty {
+    color: var(--global-text-muted);
+}
+
 /* ------------------------- PROJECT PAGE STYLES ------------------------- */
 .projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     margin: 1rem 0;
     gap: 1.5rem;
 }

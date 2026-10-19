@@ -3,7 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/common.css">
+    <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/tags.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Home | Res Londres</title>
 </head>
@@ -33,19 +34,75 @@
                     <div class="d-recent__projects">
                         <div class="recent__header">
                             <span class="recent__title">Recent Projects</span>
-                            <a href="/news.html">See all</a>
+                            <a href="/projects.html">See all</a>
                         </div>
-                        <div class="recent__body">
-
+                        <div class="recent__body recent__body--project">
+                            <div class="project" id="snake">
+                                <div>
+                                    <div class="project__header">
+                                        <p class="project__title">Snake</p>
+                                        <p class="project__date">18 Oct 26</p>
+                                    </div>
+                                    <p class="project__desc">
+                                        Snake game using HTML canvas and Javascript
+                                    </p>
+                                </div>
+                                <div class="project__footer">
+                                    <div class="project__tags">
+                                    <span class="tag tag--html">HTML</span>
+                                    <span class="tag tag--css">CSS</span>
+                                    <span class="tag tag--js">JS</span>
+                                    </div>
+                                    <a class="project__link" href="/projects/snake/index.html">Page ⇁</a>
+                                </div>
+                            </div>
+                            <div class="project" id="calculator">
+                                <div>
+                                    <div class="project__header">
+                                        <p class="project__title">Calculator</p>
+                                        <p class="project__date">18 Oct 26</p>
+                                    </div>
+                                    <p class="project__desc">
+                                        Simple HTML/CSS calculator using Javascript
+                                    </p>
+                                </div>
+                                <div class="project__footer">
+                                    <div class="project__tags">
+                                    <span class="tag tag--html">HTML</span>
+                                    <span class="tag tag--css">CSS</span>
+                                    <span class="tag tag--js">JS</span>
+                                    </div>
+                                    <a class="project__link" href="/projects/calculator/index.html">Page ⇁</a>
+                                </div>
+                            </div>
+                            <div class="project" id="loading-screen">
+                                <div>
+                                    <div class="project__header">
+                                        <p class="project__title">Loading Screen</p>
+                                        <p class="project__date">16 Oct 26</p>
+                                    </div>
+                                    <!-- TODO: kinda confusing, dont put body and header together-->
+                                    <p class="project__desc">
+                                        Simple loading screen project
+                                    </p>
+                                </div>
+                                <div class="project__footer">
+                                    <div class="project__tags">
+                                    <span class="tag tag--html">HTML</span>
+                                    <span class="tag tag--css">CSS</span>
+                                    </div>
+                                    <a class="project__link" href="/projects/loading-screen/index.html">Page ⇁</a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="d-recent__blogs">
                         <div class="recent__header">
                             <span class="recent__title">Recent Blogs</span>
-                            <a href="/news.html">See all</a>
+                            <a href="/blog.html">See all</a>
                         </div>
                         <div class="recent__body">
-
+                            <div class="recent__empty">No recent blogs...</div>
                         </div>
                     </div>
                 </section>
@@ -55,7 +112,7 @@
                             <span class="recent__title">Recent News</span>
                         </div>
                         <div class="recent__body">
-
+                            <div class="recent__empty">No recent news...</div>
                         </div>
                         <div class="recent__footer">
                             <a href="/news.html">See all</a>
