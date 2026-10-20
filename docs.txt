@@ -1,3 +1,0 @@
-.d-*    unresponsive desktop class, hidden on mobile viewports (<1024px)
-.m-*    unresponsive mobile class, hidden on desktop viewports (>=1024px)
-
