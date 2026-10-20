@@ -113,3 +113,7 @@ header nav a {
     align-items: center;
     justify-content: center;
 }
+
+.empty {
+    color: var(--global-text-muted);
+}
