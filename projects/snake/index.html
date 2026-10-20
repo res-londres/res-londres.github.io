@@ -18,30 +18,30 @@
         </nav>
     </header>
     <main>
-        <div class="path">
+        <section class="path">
             <a class="path__component" href="/projects.html">Projects</a> /
             <a class="path__component" href="/projects/snake/index.html">Snake</a>
-        </div>
+        </section>
 
-        <div class="project">
-            <div class="snake">
-                <div class="snake__header">
-                    <div class="snake__stat snake__stat--left">
-                        <i class="fa-solid fa-star"></i>
-                        <span class="snake__score" id="snake__score">0</span>
-                    </div>
-                    <span class="snake__status" id="snake__status">SNAKE!</span>
-                    <div class="snake__stat snake__stat--right">
-                        <i class="fa-solid fa-trophy"></i>
-                        <span class="snake__highscore" id="snake__highscore">0</span>
-                    </div>
+        <section class="body body--centered">
+        <div class="snake">
+            <div class="snake__header">
+                <div class="snake__stat snake__stat--left">
+                    <i class="fa-solid fa-star"></i>
+                    <span class="snake__score" id="snake__score">0</span>
                 </div>
-                <canvas id="snake__canvas" width="450" height="450"></canvas>
-                <div class="snake__footer">
-                    <span class="snake__message" id="snake__message">Press any arrow key to start</span>
+                <span class="snake__status" id="snake__status">SNAKE!</span>
+                <div class="snake__stat snake__stat--right">
+                    <i class="fa-solid fa-trophy"></i>
+                    <span class="snake__highscore" id="snake__highscore">0</span>
                 </div>
             </div>
+            <canvas id="snake__canvas" width="450" height="450"></canvas>
+            <div class="snake__footer">
+                <span class="snake__message" id="snake__message">Press any arrow key to start</span>
+            </div>
         </div>
+        </section>
     </main>
     <footer>
         <nav class="social-links">
