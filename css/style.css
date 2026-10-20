@@ -55,21 +55,37 @@
 }
 
 /* ------------------------- HOMEPAGE RECENT STYLES ------------------------- */
-.d-recent {
+.recents {
     display: grid;
     grid-template-columns: 1fr auto;
+    grid-template-areas: "left right";
 }
 
-/* stack the two columns on tablets/phones */
+.recents__left {
+    grid-area: left;
+}
+
+.recents__right {
+    grid-area: right;
+    border-left: 1px solid var(--global-border);
+}
+
 @media (max-width: 1024px) {
-    .d-recent {
+    .recents {
         grid-template-columns: 1fr;
+        grid-template-areas:
+            "right"
+            "left";
     }
-    .d-recent__right {
+    
+    .recents__right {
         border-left: none;
-        border-top: 1px solid var(--global-border);
-        margin-top: 1rem;
-        padding-top: 1rem;
+    }
+
+    .recent {
+        border-bottom: 1px solid var(--global-border);
+        padding-bottom: 1rem;
+        margin-bottom: 1rem;
     }
 }
 
@@ -92,11 +108,6 @@
     gap: 1.5rem;
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
-}
-
-.recent__footer {
-    text-align: right;
-    padding: 0 0.5rem;
 }
 
 .recent__empty {
