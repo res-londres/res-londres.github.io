@@ -2,7 +2,9 @@
 export async function renderList(container, jsonURL, htmlCreator, limit = null) {
     const res = await fetch(jsonURL);
     let list = await res.json();
+    if (list.length < 1) return;
     list = limit !== null ? list.slice(-limit) : list;
+    list.reverse();
 
     container.innerHTML = '';
     list.forEach(function(item) {
@@ -31,7 +33,7 @@ export function createProjectCard(project) {
     `;
 }
 
-export function createNewsStrip(news) {
+export function createNewsStrip(news, preview = false) {
     const newsBodyPreview = news.body.length > 500 ? news.body.slice(0, 300) + '...' : news.body;
     return `
         <div class="news strip" id="${news.id}">

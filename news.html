@@ -19,7 +19,9 @@
     <main>
         <span class="title">News</span>
         <section class="body">
-        
+        <section class="news" id="news">
+            <span class="news__empty empty">No news...</span>
+        </section>
         </section>
     </main>
     <footer>
@@ -31,5 +33,11 @@
         </nav>
         <span>© 2026 Res Londres</span>
     </footer>
+
+    <script type="module">
+        import { renderList, createNewsStrip } from '/js/list-renderer.js';
+        const newsContainer = document.getElementById('news');
+        renderList(newsContainer, '/json/news.json', createNewsStrip);
+    </script>
 </body>
 </html>

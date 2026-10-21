@@ -1,11 +1,11 @@
 [
   {
-    "id": "snake",
-    "title": "Snake",
-    "date": "18 Oct 26",
-    "desc": "Snake game using HTML canvas and Javascript",
-    "tags": ["html", "css", "js"],
-    "link": "/projects/snake/index.html"
+    "id": "loading-screen",
+    "title": "Loading Screen",
+    "date": "16 Oct 26",
+    "desc": "Simple loading screen using CSS keyframe animations",
+    "tags": ["html", "css"],
+    "link": "/projects/loading-screen/index.html"
   },
   {
     "id": "calculator",
@@ -16,11 +16,11 @@
     "link": "/projects/calculator/index.html"
   },
   {
-    "id": "loading-screen",
-    "title": "Loading Screen",
-    "date": "16 Oct 26",
-    "desc": "Simple loading screen using CSS keyframe animations",
-    "tags": ["html", "css"],
-    "link": "/projects/loading-screen/index.html"
+    "id": "snake",
+    "title": "Snake",
+    "date": "18 Oct 26",
+    "desc": "Snake game using HTML canvas and Javascript",
+    "tags": ["html", "css", "js"],
+    "link": "/projects/snake/index.html"
   }
 ]

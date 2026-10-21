@@ -112,12 +112,23 @@
 
 .recent__body--vertical {
     grid-template-columns: 1fr;
+    gap: 0;
+}
+
+.recent__body--vertical div:first-child, 
+.recent__body--vertical div:last-child {
+    border-bottom: none;
+    border-top: none;
 }
 
 /* ------------------------- NEWS STYLES ------------------------- */
 .news {
     padding: 1rem;
     justify-content: space-between;
+}
+
+.news div:not(:first-child) {
+    border-top: none;
 }
 
 .news__header {

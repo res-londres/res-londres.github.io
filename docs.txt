@@ -1,0 +1,17 @@
+projects.json {
+    "id": "",
+    "title": "",
+    "date": "",
+    "desc": "",
+    "tags": [],
+    "link": ""
+}
+
+news.json {
+    "id": "",
+    "headline": "",
+    "date": "",
+    "body": "",
+    "tags": []
+}
+
