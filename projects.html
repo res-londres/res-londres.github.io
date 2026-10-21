@@ -36,9 +36,9 @@
     </footer>
 
     <script type="module">
-        import { renderCardList } from '/js/list-renderer.js';
+        import { renderList, createProjectCard } from '/js/list-renderer.js';
         const projectsContainer = document.getElementById('projects');
-        renderCardList(projectsContainer, '/json/projects.json');
+        renderList(projectsContainer, '/json/projects.json', createProjectCard);
     </script>
 </body>
 </html>

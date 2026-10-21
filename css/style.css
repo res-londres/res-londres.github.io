@@ -110,6 +110,10 @@
     grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
 }
 
+.recent__body--vertical {
+    grid-template-columns: 1fr;
+}
+
 /* ------------------------- PROJECT PAGE STYLES ------------------------- */
 .projects {
     display: grid;
@@ -119,15 +123,8 @@
 }
 
 .project {
-    border: 1px solid var(--global-border);
-    border-radius: 0.5rem;
-    padding: 1rem;
-    padding-bottom: 0.5rem;
     min-height: 250px;
     max-height: 250px;
-    overflow: hidden;
-    display: flex;
-    flex-direction: column;
     justify-content: space-between;
 }
 

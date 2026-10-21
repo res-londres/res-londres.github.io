@@ -55,7 +55,7 @@
                         <span class="recent__title">Recent News</span>
                         <a class="recent__redirect" href="/news.html">See all</a>
                     </div>
-                    <div class="recent__body" id="recent__body--news">
+                    <div class="recent__body recent__body--vertical" id="recent__body--news">
                         <span class="empty">No recent news...</span>
                     </div>
                 </div>
@@ -74,9 +74,9 @@
     </footer>
 
     <script type="module">
-        import { renderCardList } from '/js/list-renderer.js';
+        import { renderList, createProjectCard } from '/js/list-renderer.js';
         const recentProjectsContainer = document.getElementById('recent__body--projects');
-        renderCardList(recentProjectsContainer, '/json/projects.json', 3);
+        renderList(recentProjectsContainer, '/json/projects.json', createProjectCard, 3);
     </script>
 </body>
 </html>
