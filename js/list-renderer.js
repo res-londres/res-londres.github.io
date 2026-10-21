@@ -1,7 +1,7 @@
 
 
-export async function renderProjectList(container, limit = null) {
-    const res = await fetch('/json/projects.json');
+export async function renderCardList(container, jsonURL, limit = null) {
+    const res = await fetch(jsonURL);
     const data = await res.json();
     const projects = limit !== null ? data.slice(-limit) : data;
 

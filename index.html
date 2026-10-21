@@ -74,9 +74,9 @@
     </footer>
 
     <script type="module">
-        import { renderProjectList } from '/js/card-renderer.js';
+        import { renderCardList } from '/js/list-renderer.js';
         const recentProjectsContainer = document.getElementById('recent__body--projects');
-        renderProjectList(recentProjectsContainer, 3);
+        renderCardList(recentProjectsContainer, '/json/projects.json', 3);
     </script>
 </body>
 </html>

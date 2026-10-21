@@ -81,7 +81,7 @@ header nav a {
 }
 
 .path {
-    padding: clamp(0.75rem, 2vw, 1rem) var(--page-gutter);
+    padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
     display: flex;
     gap: 0.75rem;
     flex-wrap: wrap;
