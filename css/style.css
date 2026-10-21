@@ -125,6 +125,16 @@
 .news {
     padding: 1rem;
     justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s
+}
+
+.news:hover {
+    transform: scale(1.02);
+}
+
+.news:active {
+    transform: scale(1);
 }
 
 .news div:not(:first-child) {
@@ -172,6 +182,16 @@
 .project {
     height: 250px;
     justify-content: space-between;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.project:hover {
+    transform: scale(1.03);
+}
+
+.project:active {
+    transform: scale(1);
 }
 
 .project__header {
@@ -195,16 +215,12 @@
 }
 
 .project__footer {
-    display: flex;
-    flex-direction: column;
-    gap: 0.2rem;
+    border-top: 1px solid var(--global-border);
+    padding: 0.5rem 0;
 }
-
 .project__tags {
     display: flex;
     gap: 0.5rem;
-    padding-bottom: 0.5rem;
-    border-bottom: 1px solid var(--global-border);
     flex-wrap: wrap;
 }
 
