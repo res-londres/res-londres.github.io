@@ -127,3 +127,12 @@ header nav a {
     display: flex;
     flex-direction: column;
 }
+
+.strip {
+    background: inherit;
+    border-top: 1px solid var(--global-border);
+    border-bottom: 1px solid var(--global-border);
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+}

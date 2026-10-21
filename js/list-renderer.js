@@ -25,25 +25,26 @@ export function createProjectCard(project) {
                 <div class="project__tags">
                     ${project.tags.map(tag => `<span class="tag tag--${tag}">${tag.toUpperCase()}</span>`).join('')}
                 </div>
-                <a class="project__link" href=${project.link}>Page ⇁</a>
+                <a class="project__link" href=${project.link}>Go To ⇁</a>
             </div>
         </div>
     `;
 }
 
 export function createNewsStrip(news) {
+    const newsBodyPreview = news.body.length > 500 ? news.body.slice(0, 300) + '...' : news.body;
     return `
         <div class="news strip" id="${news.id}">
             <div>
                 <div class="news__header">
-                    <p class="news__title">${news.title}</p>
+                    <p class="news__headline">${news.headline}</p>
                     <p class="news__date">${news.date}</p>
                 </div>
-                <p class="news__body">${news.desc}</p>
+                <p class="news__body">${newsBodyPreview}</p>
             </div>
             <div class="news__footer">
                 <div class="news__tags">
-                    ${news.tags.map(tag => `<span class="tag tag--${tag}">${tag.toUpperCase()}</span>`).join('')}
+                    ${news.tags.map(tag => `<span class="tag tag--news">${tag.toUpperCase()}</span>`).join('')}
                 </div>
             </div>
         </div>

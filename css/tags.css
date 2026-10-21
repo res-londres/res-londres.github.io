@@ -19,3 +19,8 @@
 .tag--js {
     background: #f7df1e;
 }
+
+.tag--news {
+    background: #756f6d;
+    color: var(--global-text-white);
+}

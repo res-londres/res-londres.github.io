@@ -1,0 +1,23 @@
+[
+  {
+    "id": "news1",
+    "headline": "Craziest headline",
+    "date": "18 Oct 26",
+    "body": "Lorem ipsum dolor sit, amet consectetur adipisicing elit. Atque hic rem voluptatibus unde tempore voluptates facilis ducimus cupiditate ipsam sapiente laboriosam quasi perspiciatis ullam natus voluptatem, eligendi tenetur consequuntur. Ipsa nulla dolorum eos facere praesentium nostrum similique quo nihil dignissimos libero ab, numquam molestias animi perferendis labore asperiores! Accusantium, quis omnis? Repellendus, excepturi quos sapiente ad id repudiandae exercitationem omnis deserunt architecto animi possimus atque quia facilis odit nisi quidem similique laborum amet qui dignissimos suscipit! Ipsa pariatur autem sed inventore maiores ullam quis eaque quisquam sequi? Optio quisquam repellendus omnis voluptate. Quo et repellat dignissimos exercitationem facere numquam fugit?",
+    "tags": ["html", "css", "js"]
+  },
+  {
+    "id": "news2",
+    "headline": "Crazier headline",
+    "date": "18 Oct 26",
+    "body": "Simple HTML/CSS calculator using Javascript",
+    "tags": ["html", "css", "js"]
+  },
+  {
+    "id": "news3",
+    "headline": "Crazy headline",
+    "date": "16 Oct 26",
+    "body": "Simple loading screen using CSS keyframe animations",
+    "tags": ["html", "css"]
+  }
+]
