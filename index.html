@@ -74,7 +74,12 @@
     </footer>
 
     <script type="module">
-        import { renderList, createProjectCard, createNewsStrip } from '/js/list-renderer.js';
+        import { renderList } from '/js/list-renderer.js';
+        import { createProjectCard, createNewsStrip } from '/js/list-creator.js';
+        import { projectEventListeners } from '/js/event-listeners.js';
+        
+        projectEventListeners();
+
         const recentProjectsContainer = document.getElementById('recent__body--projects');
         const recentNewsContainer = document.getElementById('recent__body--news');
         renderList(recentProjectsContainer, '/json/projects.json', createProjectCard, 3);

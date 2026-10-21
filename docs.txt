@@ -4,7 +4,7 @@ projects.json {
     "date": "",
     "desc": "",
     "tags": [],
-    "link": ""
+    "url": ""
 }
 
 news.json {

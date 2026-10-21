@@ -35,7 +35,9 @@
     </footer>
 
     <script type="module">
-        import { renderList, createNewsStrip } from '/js/list-renderer.js';
+        import { renderList } from '/js/list-renderer.js';
+        import { createNewsStrip } from '/js/list-creator.js';
+
         const newsContainer = document.getElementById('news');
         renderList(newsContainer, '/json/news.json', createNewsStrip);
     </script>

@@ -5,7 +5,7 @@
     "date": "16 Oct 26",
     "desc": "Simple loading screen using CSS keyframe animations",
     "tags": ["html", "css"],
-    "link": "/projects/loading-screen/index.html"
+    "url": "https://res-londres.github.io/projects/loading-screen/index.html"
   },
   {
     "id": "calculator",
@@ -13,7 +13,7 @@
     "date": "18 Oct 26",
     "desc": "Simple HTML/CSS calculator using Javascript",
     "tags": ["html", "css", "js"],
-    "link": "/projects/calculator/index.html"
+    "url": "https://res-londres.github.io/projects/calculator/index.html"
   },
   {
     "id": "snake",
@@ -21,6 +21,6 @@
     "date": "18 Oct 26",
     "desc": "Snake game using HTML canvas and Javascript",
     "tags": ["html", "css", "js"],
-    "link": "/projects/snake/index.html"
+    "url": "https://res-londres.github.io/projects/snake/index.html"
   }
 ]
