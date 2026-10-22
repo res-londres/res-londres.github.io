@@ -9,7 +9,7 @@ projects.json {
 
 news.json {
     "id": "",
-    "headline": "",
+    "title": "",
     "date": "",
     "body": "",
     "tags": []

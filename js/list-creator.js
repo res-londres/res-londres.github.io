@@ -23,7 +23,7 @@ export function createNewsStrip(news) {
         <div class="news strip" id="${news.id}">
             <div>
                 <div class="news__header">
-                    <p class="news__headline">${news.headline}</p>
+                    <p class="news__title">${news.title}</p>
                     <p class="news__date">${news.date}</p>
                 </div>
                 <p class="news__body">${newsPreview}</p>
