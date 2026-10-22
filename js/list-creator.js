@@ -18,7 +18,7 @@ export function createProjectCard(project) {
 }
 
 export function createNewsStrip(news) {
-    const newsBodyPreview = news.body.length > 500 ? news.body.slice(0, 300) + '...' : news.body;
+    const newsPreview = news.body.length > 500 ? news.body.slice(0, 300) + '...' : news.body;
     return `
         <div class="news strip" id="${news.id}">
             <div>
@@ -26,11 +26,31 @@ export function createNewsStrip(news) {
                     <p class="news__headline">${news.headline}</p>
                     <p class="news__date">${news.date}</p>
                 </div>
-                <p class="news__body">${newsBodyPreview}</p>
+                <p class="news__body">${newsPreview}</p>
             </div>
             <div class="news__footer">
                 <div class="news__tags">
                     ${news.tags.map(tag => `<span class="tag tag--news">${tag.toUpperCase()}</span>`).join('')}
+                </div>
+            </div>
+        </div>
+    `;
+}
+
+export function createBlogStrip(blog) {
+    const blogPreview  = blog.body.length > 500 ? blog.body.slice(0, 300) + '...' : blog.body;
+    return `
+        <div class="blog strip" id="${blog.id}">
+            <div>
+                <div class="blog__header">
+                    <p class="blog__title">${blog.title}</p>
+                    <p class="blog__date">${blog.date}</p>
+                </div>
+                <p class="blog__body">${blogPreview}</p>
+            </div>
+            <div class="blog__footer">
+                <div class="blog__tags">
+                    ${blog.tags.map(tag => `<span class="tag tag--blog">${tag.toUpperCase()}</span>`).join('')}
                 </div>
             </div>
         </div>

@@ -55,7 +55,7 @@
                         <span class="recent__title">Recent News</span>
                         <a class="recent__redirect" href="/news.html">See all</a>
                     </div>
-                    <div class="recent__body recent__body--vertical" id="recent__body--news">
+                    <div class="recent__body recent__body--stacked" id="recent__body--news">
                         <span class="empty">No recent news...</span>
                     </div>
                 </div>
@@ -75,15 +75,17 @@
 
     <script type="module">
         import { renderList } from '/js/list-renderer.js';
-        import { createProjectCard, createNewsStrip } from '/js/list-creator.js';
+        import { createProjectCard, createNewsStrip, createBlogStrip } from '/js/list-creator.js';
         import { projectEventListeners } from '/js/event-listeners.js';
         
         projectEventListeners();
 
         const recentProjectsContainer = document.getElementById('recent__body--projects');
         const recentNewsContainer = document.getElementById('recent__body--news');
+        const recentBlogsContainer = document.getElementById('recent__body--blogs');
         renderList(recentProjectsContainer, '/json/projects.json', createProjectCard, 3);
         renderList(recentNewsContainer, '/json/news.json', createNewsStrip, 3);
+        renderList(recentBlogsContainer, '/json/blogs.json', createBlogStrip, 3);
     </script>
 </body>
 </html>
