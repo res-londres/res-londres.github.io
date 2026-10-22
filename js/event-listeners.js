@@ -16,6 +16,9 @@ export function clickEventListeners() {
                 case 'openBlogModal':
                     openModal(actionElement, 'blog');
                     break;
+                case 'closeModal':
+                    closeModal();
+                    break;
             }
         }
     });
@@ -35,10 +38,11 @@ async function openModal(element, type) {
     const item = data.find(obj => obj.id === element.id);
     const modalContentContainer = document.getElementById('modal__content');
     modalContentContainer.innerHTML = createModalContent(item, type);
-    document.getElementById('modal').style.display = "flex";
+    document.getElementById('modal').style.display = 'flex';
 }
 
 function createModalContent(item, type) {
+    console.log(item.tags.length);
     const tags = item.tags.length
         ? `<div class="modal__tags">
                ${item.tags.map(tag => `<span class="tag tag--${type}">${tag.toUpperCase()}</span>`).join('')}
@@ -59,4 +63,9 @@ function createModalContent(item, type) {
         </div>
         <div class="modal__body">${item.body}</div>
     `;
+}
+
+function closeModal() {
+    document.getElementById('modal').style.display = '';
+    document.getElementById('modal__content').innerHTML = '';
 }
