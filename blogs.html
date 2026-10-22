@@ -19,7 +19,9 @@
     <main>
         <span class="title">Blogs</span>
         <section class="body">
-        
+        <section class="blogs" id="blogs">
+            <span class="blogs__empty empty">No blogs...</span>
+        </section>
         </section>
     </main>
     <footer>
@@ -31,5 +33,16 @@
         </nav>
         <span>© 2026 Res Londres</span>
     </footer>
+
+    <script type="module">
+        import { renderList } from '/js/list-renderer.js';
+        import { createNewsStrip } from '/js/list-creator.js';
+        import { clickEventListeners } from '/js/event-listeners.js';
+        
+        clickEventListeners();
+
+        const blogsContainer = document.getElementById('blogs');
+        renderList(blogsContainer, '/json/blogs.json', createNewsStrip);
+    </script>
 </body>
 </html>

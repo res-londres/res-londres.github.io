@@ -85,9 +85,9 @@
     <script type="module">
         import { renderList } from '/js/list-renderer.js';
         import { createProjectCard, createNewsStrip, createBlogStrip } from '/js/list-creator.js';
-        import { projectEventListeners } from '/js/event-listeners.js';
+        import { clickEventListeners } from '/js/event-listeners.js';
         
-        projectEventListeners();
+        clickEventListeners();
 
         const recentProjectsContainer = document.getElementById('recent__body--projects');
         const recentNewsContainer = document.getElementById('recent__body--news');

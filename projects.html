@@ -38,6 +38,9 @@
     <script type="module">
         import { renderList } from '/js/list-renderer.js';
         import { createProjectCard } from '/js/list-creator.js';
+        import { clickEventListeners } from '/js/event-listeners.js';
+        
+        clickEventListeners();
         
         const projectsContainer = document.getElementById('projects');
         renderList(projectsContainer, '/json/projects.json', createProjectCard);

@@ -37,6 +37,9 @@
     <script type="module">
         import { renderList } from '/js/list-renderer.js';
         import { createNewsStrip } from '/js/list-creator.js';
+        import { clickEventListeners } from '/js/event-listeners.js';
+        
+        clickEventListeners();
 
         const newsContainer = document.getElementById('news');
         renderList(newsContainer, '/json/news.json', createNewsStrip);

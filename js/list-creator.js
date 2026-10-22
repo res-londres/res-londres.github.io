@@ -1,6 +1,6 @@
 export function createProjectCard(project) {
     return `
-        <div class="project card" id="${project.id}" data-url="${project.url}">
+        <div class="project card" id="${project.id}" data-url="${project.url}" data-action="gotoProjectURL">
             <div>
                 <div class="project__header">
                     <p class="project__title">${project.title}</p>
@@ -20,7 +20,7 @@ export function createProjectCard(project) {
 export function createNewsStrip(news) {
     const newsPreview = news.body.length > 500 ? news.body.slice(0, 300) + '...' : news.body;
     return `
-        <div class="news strip" id="${news.id}">
+        <div class="news strip" id="${news.id}" data-action="openNewsModal">
             <div>
                 <div class="news__header">
                     <p class="news__title">${news.title}</p>
@@ -40,7 +40,7 @@ export function createNewsStrip(news) {
 export function createBlogStrip(blog) {
     const blogPreview  = blog.body.length > 500 ? blog.body.slice(0, 300) + '...' : blog.body;
     return `
-        <div class="blog strip" id="${blog.id}">
+        <div class="blog strip" id="${blog.id}" data-action="openBlogModal">
             <div>
                 <div class="blog__header">
                     <p class="blog__title">${blog.title}</p>
