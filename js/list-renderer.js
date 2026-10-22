@@ -1,5 +1,5 @@
-export async function renderList(container, jsonURL, htmlCreator, limit = null) {
-    const res = await fetch(jsonURL);
+export async function renderList(container, jsonPath, htmlCreator, limit = null) {
+    const res = await fetch(jsonPath);
     let list = await res.json();
     if (list.length < 1) return;
     list = limit !== null ? list.slice(-limit) : list;
@@ -7,6 +7,6 @@ export async function renderList(container, jsonURL, htmlCreator, limit = null) 
 
     container.innerHTML = '';
     list.forEach(function(item) {
-        container.insertAdjacentHTML('beforeend', htmlCreator(item));
+        container.insertAdjacentHTML('beforeend', htmlCreator(item, jsonPath));
     });
 }

@@ -1,6 +1,12 @@
-export function createProjectCard(project) {
+export function createProjectCard(project, jsonPath) {
+    const tags = project.tags.length
+        ? `<div class="project__tags">
+               ${project.tags.map(tag => `<span class="tag tag--${tag}">${tag.toUpperCase()}</span>`).join('')}
+           </div>`
+        : '';
+
     return `
-        <div class="project card" id="${project.id}" data-url="${project.url}" data-action="gotoProjectURL">
+        <div class="project card" id="${project.id}" data-url="${project.url}" data-action="gotoProjectURL" data-jsonpath="${jsonPath}">
             <div>
                 <div class="project__header">
                     <p class="project__title">${project.title}</p>
@@ -9,18 +15,22 @@ export function createProjectCard(project) {
                 <p class="project__desc">${project.desc}</p>
             </div>
             <div class="project__footer">
-                <div class="project__tags">
-                    ${project.tags.map(tag => `<span class="tag tag--${tag}">${tag.toUpperCase()}</span>`).join('')}
-                </div>
+                ${tags}
             </div>
         </div>
     `;
 }
 
-export function createNewsStrip(news) {
+export function createNewsStrip(news, jsonPath) {
     const newsPreview = news.body.length > 500 ? news.body.slice(0, 300) + '...' : news.body;
+    const tags = news.tags.length
+        ? `<div class="news__tags">
+               ${news.tags.map(tag => `<span class="tag tag--news">${tag.toUpperCase()}</span>`).join('')}
+           </div>`
+        : '';
+
     return `
-        <div class="news strip" id="${news.id}" data-action="openNewsModal">
+        <div class="news strip" id="${news.id}" data-action="openNewsModal" data-jsonpath="${jsonPath}">
             <div>
                 <div class="news__header">
                     <p class="news__title">${news.title}</p>
@@ -29,18 +39,22 @@ export function createNewsStrip(news) {
                 <p class="news__body">${newsPreview}</p>
             </div>
             <div class="news__footer">
-                <div class="news__tags">
-                    ${news.tags.map(tag => `<span class="tag tag--news">${tag.toUpperCase()}</span>`).join('')}
-                </div>
+                ${tags}
             </div>
         </div>
     `;
 }
 
-export function createBlogStrip(blog) {
+export function createBlogStrip(blog, jsonPath) {
     const blogPreview  = blog.body.length > 500 ? blog.body.slice(0, 300) + '...' : blog.body;
+    const tags = blog.tags.length
+        ? `<div class="blog__tags">
+               ${blog.tags.map(tag => `<span class="tag tag--blog">${tag.toUpperCase()}</span>`).join('')}
+           </div>`
+        : '';
+
     return `
-        <div class="blog strip" id="${blog.id}" data-action="openBlogModal">
+        <div class="blog strip" id="${blog.id}" data-action="openBlogModal" data-jsonpath="${jsonPath}">
             <div>
                 <div class="blog__header">
                     <p class="blog__title">${blog.title}</p>
@@ -49,9 +63,7 @@ export function createBlogStrip(blog) {
                 <p class="blog__body">${blogPreview}</p>
             </div>
             <div class="blog__footer">
-                <div class="blog__tags">
-                    ${blog.tags.map(tag => `<span class="tag tag--blog">${tag.toUpperCase()}</span>`).join('')}
-                </div>
+                ${tags}
             </div>
         </div>
     `;
