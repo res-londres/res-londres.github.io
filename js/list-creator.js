@@ -6,7 +6,7 @@ export function createProjectCard(project, jsonPath) {
         : '';
 
     return `
-        <div class="project card" id="${project.id}" data-url="${project.url}" data-action="gotoProjectURL" data-jsonpath="${jsonPath}">
+        <div class="project__item card" id="${project.id}" data-url="${project.url}" data-action="gotoProjectURL" data-jsonpath="${jsonPath}">
             <div>
                 <div class="project__header">
                     <p class="project__title">${project.title}</p>
@@ -30,7 +30,7 @@ export function createNewsStrip(news, jsonPath) {
         : '';
 
     return `
-        <div class="news strip" id="${news.id}" data-action="openNewsModal" data-jsonpath="${jsonPath}">
+        <div class="news__item strip" id="${news.id}" data-action="openNewsModal" data-jsonpath="${jsonPath}">
             <div>
                 <div class="news__header">
                     <p class="news__title">${news.title}</p>
@@ -54,7 +54,7 @@ export function createBlogStrip(blog, jsonPath) {
         : '';
 
     return `
-        <div class="blog strip" id="${blog.id}" data-action="openBlogModal" data-jsonpath="${jsonPath}">
+        <div class="blog__item strip" id="${blog.id}" data-action="openBlogModal" data-jsonpath="${jsonPath}">
             <div>
                 <div class="blog__header">
                     <p class="blog__title">${blog.title}</p>
