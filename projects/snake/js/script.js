@@ -205,6 +205,7 @@ function restartGame(event) {
     if (keys.includes(keyPressed)) {
         snake = getStartSnake();
         isGameOver = false;
+        isChangingDirection = false;
         lastTime = performance.now(); 
         dx = GRID_SIZE;
         dy = 0;
@@ -217,10 +218,12 @@ function restartGame(event) {
 
         snakeStatus.textContent = 'GAME ON';
         snakeMessage.textContent = 'Play well!';
+
+        changeDirection(event);
     }
 }
 
-function gameOver(event) {
+function gameOver() {
     snakeStatus.textContent = 'GAME OVER';
     snakeMessage.textContent = 'Press any arrow key to start';
     isGameOver = true;
