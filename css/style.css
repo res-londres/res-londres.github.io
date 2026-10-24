@@ -129,11 +129,11 @@
     transition: all 0.3s
 }
 
-.news:hover {
+.news__item:hover {
     transform: scale(1.02);
 }
 
-.news:active {
+.news__item:active {
     transform: scale(1);
 }
 
@@ -180,11 +180,11 @@
     border: none;
 }
 
-.blog:hover {
+.blog__item:hover {
     transform: scale(1.02);
 }
 
-.blog:active {
+.blog__item:active {
     transform: scale(1);
 }
 
@@ -233,11 +233,11 @@
     transition: all 0.3s;
 }
 
-.project:hover {
+.project__item:hover {
     transform: scale(1.03);
 }
 
-.project:active {
+.project__item:active {
     transform: scale(1);
 }
 

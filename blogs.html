@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="/css/common.css">
+    <link rel="stylesheet" href="/css/tags.css">
     <link rel="stylesheet" href="css/style.css">
     <title>Blogs | Res Londres</title>
 </head>
@@ -45,13 +46,13 @@
 
     <script type="module">
         import { renderList } from '/js/list-renderer.js';
-        import { createNewsStrip } from '/js/list-creator.js';
+        import { createBlogStrip } from '/js/list-creator.js';
         import { clickEventListeners } from '/js/event-listeners.js';
         
         clickEventListeners();
 
         const blogsContainer = document.getElementById('blogs');
-        renderList(blogsContainer, '/json/blogs.json', createNewsStrip);
+        renderList(blogsContainer, '/json/blogs.json', createBlogStrip);
     </script>
 </body>
 </html>

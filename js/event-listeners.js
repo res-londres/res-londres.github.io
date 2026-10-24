@@ -2,10 +2,10 @@ export function clickEventListeners() {
     document.addEventListener('click', function(event) {
         const actionElement = event.target.closest('[data-action]');
 
-        event.stopPropagation();
         if (actionElement) {
             const action = actionElement.dataset.action;
-
+            
+            event.stopPropagation();
             switch (action) {
                 case 'gotoProjectURL':
                     gotoProjectURL(actionElement);
@@ -42,7 +42,6 @@ async function openModal(element, type) {
 }
 
 function createModalContent(item, type) {
-    console.log(item.tags.length);
     const tags = item.tags.length
         ? `<div class="modal__tags">
                ${item.tags.map(tag => `<span class="tag tag--${type}">${tag.toUpperCase()}</span>`).join('')}
