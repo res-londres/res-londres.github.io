@@ -115,18 +115,13 @@
     gap: 0;
 }
 
-.recent__body--stacked div:first-child, 
-.recent__body--stacked div:last-child {
-    border-bottom: none;
-    border-top: none;
-}
-
 /* ------------------------- NEWS STYLES ------------------------- */
 .news__item {
     padding: 1rem;
     justify-content: space-between;
     cursor: pointer;
-    transition: all 0.3s
+    transition: all 0.3s;
+    border-bottom: none;
 }
 
 .news__item:hover {
@@ -137,7 +132,7 @@
     transform: scale(1);
 }
 
-.news div:not(:first-child) {
+.news div:first-child {
     border-top: none;
 }
 
@@ -150,7 +145,7 @@
     padding-bottom: 0.5rem;
 }
 
-.news__headline { 
+.news__title { 
     font-size: 1.25rem; 
     font-weight: bold; 
 }
