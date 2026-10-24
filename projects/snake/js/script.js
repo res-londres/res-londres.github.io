@@ -41,6 +41,7 @@ requestAnimationFrame(main);
 drawSnake();
 document.addEventListener('keydown', changeDirection);
 document.addEventListener('keydown', restartGame);
+connectController();
 
 function main(currentTime) {
     requestAnimationFrame(main);
@@ -96,6 +97,9 @@ function advanceSnake() {
 }
 
 function changeDirection(event) {
+    const keyPressed = typeof(event) === 'object' ? event.keyCode : event;
+    console.log('keypressed: ', keyPressed);
+
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
     const UP_KEY = 38;
@@ -103,8 +107,6 @@ function changeDirection(event) {
 
     if (isChangingDirection) return;
     isChangingDirection = true;
-
-    const keyPressed = event.keyCode;
 
     const goingUp = dy === -GRID_SIZE;
     const goingDown = dy === GRID_SIZE;
@@ -200,7 +202,7 @@ function incrementScore() {
 function restartGame(event) {
     if (!isGameOver) return;
     const keys = [37, 38, 39, 40];
-    const keyPressed = event.keyCode;
+    const keyPressed = typeof(event) === 'object' ? event.keyCode : event;
 
     if (keys.includes(keyPressed)) {
         snake = getStartSnake();
@@ -227,4 +229,28 @@ function gameOver() {
     snakeStatus.textContent = 'GAME OVER';
     snakeMessage.textContent = 'Press any arrow key to start';
     isGameOver = true;
+}
+
+/* ------------------------- CONTROLLER ----------------------- */
+
+function connectController() {
+    document.addEventListener('click', function(event) {
+        const key = event.target.closest('[data-direction]');
+        console.log('clicked: ', key);
+
+        if (key) {
+            const direction = key.dataset.direction;
+            console.log('direction: ', direction);
+            const directionMap = {
+                left: 37,
+                right: 39,
+                up: 38,
+                down: 40
+            }
+            const keyCode = directionMap[direction];
+
+            changeDirection(keyCode);
+            restartGame(keyCode);
+        }
+    });
 }
