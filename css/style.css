@@ -277,51 +277,46 @@
             /* exported and translated from greenwall */
 
 .modal {
-  position: fixed;
-  top: 0;
-  left: 0;
-  z-index: 30;
-  display: none;
-  height: 100%;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
+    position: fixed;
+    inset: 0;
+    z-index: 30;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    padding: clamp(0.75rem, 3vw, 1.5rem);
+    overflow-y: auto;
+}
+
+.modal--open {
+    display: flex;
 }
 
 .modal__overlay {
-  position: fixed;
-  top: 0;
-  left: 0;
-  height: 100%;
-  width: 100%;
-  -webkit-backdrop-filter: blur(4px);
-  backdrop-filter: blur(4px);
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.4);
+    -webkit-backdrop-filter: blur(4px);
+    backdrop-filter: blur(4px);
+    cursor: pointer;
 }
 
 .modal__card {
-  position: relative;
-  z-index: 30;
-  max-height: 85dvh;
-  width: 100%;
-  max-width: 43.75rem; 
-  overflow-y: auto;
-  border-radius: 0.5rem;
-  border: 1px solid var(--global-border);
-  background-color: var(--global-surface);
-  padding: 1.5rem;
+    position: relative;
+    z-index: 30;
+    width: 100%;
+    max-width: 43.75rem;
+    max-height: 85dvh;
+    overflow-y: auto;
+    border-radius: 0.5rem;
+    border: 1px solid var(--global-border);
+    background-color: var(--global-surface);
+    padding: clamp(1rem, 3vw, 1.5rem);
 }
 
 .modal__content {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-}
-
-@media (max-width: 767px) {
-  .modal {
-    padding: 1rem;
-  }
+    gap: clamp(0.75rem, 2vw, 1rem);
 }
 
 .modal__header {
@@ -331,18 +326,24 @@
     border-bottom: 1px solid var(--global-border);
     padding-bottom: 1rem;
 }
+
 .modal__top-row {
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    gap: 0.5rem;
 }
 
 .modal__type {
-    color: var(--global-text-muted); 
+    color: var(--global-text-muted);
+    font-size: 0.85rem;
 }
 
 .modal__title {
     font-weight: bold;
-    font-size: 1.75rem;
+    font-size: clamp(1.25rem, 4vw, 1.75rem);
+    line-height: 1.25;
+    word-break: break-word;
 }
 
 .modal__date {
@@ -357,4 +358,32 @@
 
 .modal__close {
     cursor: pointer;
+    background: none;
+    border: none;
+    font-size: 1.25rem;
+    color: var(--global-text);
+    padding: 0.25rem 0.5rem;
+    border-radius: 0.25rem;
+    line-height: 1;
+    flex-shrink: 0;
+}
+
+.modal__close:hover {
+    background: var(--gray-light);
+}
+
+/* full-screen sheet on small phones */
+@media (max-width: 480px) {
+    .modal {
+        padding: 0;
+        align-items: stretch;
+    }
+
+    .modal__card {
+        max-height: 100dvh;
+        height: 100dvh;
+        max-width: 100%;
+        border-radius: 0;
+        border: none;
+    }
 }
