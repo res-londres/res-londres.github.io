@@ -80,6 +80,10 @@ header nav a {
     color: var(--global-text); 
 }
 
+body.no-scroll {
+    overflow: hidden;
+}
+
 .path {
     padding: clamp(0.75rem, 2vw, 1rem) clamp(1rem, 3vw, 2rem);
     display: flex;

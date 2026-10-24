@@ -30,17 +30,6 @@ function gotoProjectURL(project) {
     window.location.href = url;
 } 
 
-async function openModal(element, type) {
-    const jsonPath = element.dataset.jsonpath;
-    const res = await fetch(jsonPath);
-    let data = await res.json();
-    if (data.length < 1) return;
-    const item = data.find(obj => obj.id === element.id);
-    const modalContentContainer = document.getElementById('modal__content');
-    modalContentContainer.innerHTML = createModalContent(item, type);
-    document.getElementById('modal').style.display = 'flex';
-}
-
 function createModalContent(item, type) {
     const tags = item.tags.length
         ? `<div class="modal__tags">
@@ -64,7 +53,20 @@ function createModalContent(item, type) {
     `;
 }
 
+async function openModal(element, type) {
+    const jsonPath = element.dataset.jsonpath;
+    const res = await fetch(jsonPath);
+    let data = await res.json();
+    if (data.length < 1) return;
+    const item = data.find(obj => obj.id === element.id);
+    const modalContentContainer = document.getElementById('modal__content');
+    modalContentContainer.innerHTML = createModalContent(item, type);
+    document.getElementById('modal').style.display = 'flex';
+    document.body.classList.add('no-scroll');
+}
+
 function closeModal() {
     document.getElementById('modal').style.display = '';
     document.getElementById('modal__content').innerHTML = '';
+    document.body.classList.remove('no-scroll');
 }
