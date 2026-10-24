@@ -98,7 +98,6 @@ function advanceSnake() {
 
 function changeDirection(event) {
     const keyPressed = typeof(event) === 'object' ? event.keyCode : event;
-    console.log('keypressed: ', keyPressed);
 
     const LEFT_KEY = 37;
     const RIGHT_KEY = 39;
@@ -236,11 +235,9 @@ function gameOver() {
 function connectController() {
     document.addEventListener('click', function(event) {
         const key = event.target.closest('[data-direction]');
-        console.log('clicked: ', key);
 
         if (key) {
             const direction = key.dataset.direction;
-            console.log('direction: ', direction);
             const directionMap = {
                 left: 37,
                 right: 39,
