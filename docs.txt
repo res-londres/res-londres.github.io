@@ -11,6 +11,7 @@ news.json {
     "id": "",
     "title": "",
     "date": "",
+    "author": "",
     "body": "",
     "tags": []
 }
@@ -19,6 +20,7 @@ blogs.json {
     "id": "",
     "title": "",
     "date": "",
+    "author": "",
     "body": "",
     "tags": []
 }

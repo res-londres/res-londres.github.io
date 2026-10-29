@@ -36,6 +36,7 @@ export function createNewsStrip(news, jsonPath) {
                     <p class="news__title">${news.title}</p>
                     <p class="news__date">${news.date}</p>
                 </div>
+                <em>By ${news.author}</em>
                 <p class="news__body">${newsPreview}</p>
             </div>
             <div class="news__footer">
@@ -60,6 +61,7 @@ export function createBlogStrip(blog, jsonPath) {
                     <p class="blog__title">${blog.title}</p>
                     <p class="blog__date">${blog.date}</p>
                 </div>
+                <em>By ${blog.author}</em>
                 <p class="blog__body">${blogPreview}</p>
             </div>
             <div class="blog__footer">

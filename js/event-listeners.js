@@ -49,6 +49,7 @@ function createModalContent(item, type) {
             <span class="modal__date">${item.date}</span>
             ${tags}
         </div>
+        <em>By ${item.author}</em>
         <div class="modal__body">${item.body}</div>
     `;
 }
